@@ -95,6 +95,10 @@ Useful tokens include colors, spacing, typography, surfaces, borders, focus ring
 
 Vitre targets modern browsers and uses current CSS features including cascade layers, `color-mix()`, `:where()`, `:has()`, logical properties, `clamp()`, and `backdrop-filter`. It favors a small, expressive stylesheet over legacy fallbacks.
 
+## Visual Test Page
+
+Open `test.html` directly in a browser to check the visual look and feel across common semantic elements. It only depends on the local `vitre.css` file.
+
 ## Publishing
 
 The package is set up for npm and static CSS hosting. Before publishing, verify the package contents:

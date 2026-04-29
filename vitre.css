@@ -55,7 +55,7 @@
   :root {
     color-scheme: light dark;
 
-    --vitre-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --vitre-font-sans: Roboto, "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     --vitre-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --vitre-leading: 1.65;
     --vitre-measure: 72ch;
@@ -109,6 +109,9 @@
     --vitre-control-text: var(--vitre-text);
     --vitre-control-placeholder: var(--vitre-subtle);
     --vitre-control-height: 2.75rem;
+    --vitre-button-height: 36px;
+    --vitre-button-font-size: 14px;
+    --vitre-button-padding-inline: 1rem;
 
     --vitre-code-bg: hsl(220 33% 95%);
     --vitre-code-text: hsl(224 48% 22%);
@@ -212,7 +215,7 @@
     display: flow-root;
   }
 
-  :where(main, article, section, aside, nav, form, fieldset, blockquote, table, pre, details, dialog) {
+  :where(main, article, section, aside, nav, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"]) {
     margin-block: var(--vitre-space-5);
   }
 
@@ -368,11 +371,13 @@
   :where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]), select) {
     min-block-size: var(--vitre-control-height);
     padding-inline: var(--vitre-space-4);
+    font-weight: 400;
   }
 
   textarea {
     min-block-size: 8rem;
     padding: var(--vitre-space-3) var(--vitre-space-4);
+    font-weight: 400;
     resize: vertical;
   }
 
@@ -386,6 +391,12 @@
     color: var(--vitre-muted);
     font-size: var(--vitre-step--1);
     font-weight: 650;
+  }
+
+  label:has(:where(input[type="checkbox"], input[type="radio"])) {
+    display: inline-flex;
+    align-items: center;
+    inline-size: auto;
   }
 
   label:has(:where(input:not([type="checkbox"]):not([type="radio"]), textarea, select)) {
@@ -405,13 +416,17 @@
     align-items: center;
     justify-content: center;
     gap: var(--vitre-space-2);
-    min-block-size: var(--vitre-control-height);
+    min-block-size: var(--vitre-button-height);
+    block-size: var(--vitre-button-height);
     border-color: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
-    padding: 0.62rem 1.05rem;
+    padding: 0 var(--vitre-button-padding-inline);
     color: var(--vitre-primary-ink);
-    font-weight: 720;
+    font-size: var(--vitre-button-font-size);
+    font-weight: 400;
+    letter-spacing: 0.04em;
     line-height: 1;
     text-decoration: none;
+    text-transform: uppercase;
     background:
       linear-gradient(180deg, color-mix(in oklab, var(--vitre-primary), white 12%), var(--vitre-primary));
     cursor: pointer;
@@ -521,7 +536,7 @@
     margin-block-end: var(--vitre-space-3);
   }
 
-  dialog {
+  :where(dialog, [role="dialog"]) {
     max-inline-size: min(42rem, calc(100% - 2rem));
     border: var(--vitre-border-width) solid var(--vitre-border);
     border-radius: var(--vitre-radius-lg);

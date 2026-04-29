@@ -1,0 +1,38 @@
+{
+  "name": "vitre-css",
+  "version": "0.1.0",
+  "description": "Classless CSS with a high-end glass finish for semantic HTML.",
+  "license": "MIT",
+  "homepage": "https://appurist.github.io/vitre-css/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appurist/vitre-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appurist/vitre-css/issues"
+  },
+  "directories": {
+    "doc": "."
+  },
+  "keywords": [
+    "css",
+    "classless",
+    "semantic-html",
+    "stylesheet",
+    "theme",
+    "dark-mode"
+  ],
+  "main": "vitre.css",
+  "style": "vitre.css",
+  "unpkg": "vitre.css",
+  "jsdelivr": "vitre.css",
+  "files": [
+    "vitre.css",
+    "README.md",
+    "LICENSE",
+    "VitreCSS.md"
+  ],
+  "scripts": {
+    "check:pack": "npm pack --dry-run"
+  }
+}

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vitre CSS Documentation</title>
+    <link rel="stylesheet" href="../vitre.css">
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Documentation">
+        <a href="#install">Install</a>
+        <a href="#usage">Usage</a>
+        <a href="#themes">Themes</a>
+        <a href="#tokens">Tokens</a>
+        <a href="#elements">Elements</a>
+      </nav>
+
+      <h1>Vitre CSS</h1>
+      <p>The transparent style layer. Classless CSS with a high-end finish.</p>
+      <p>
+        Vitre is a single-file stylesheet for semantic HTML. Add one CSS file and
+        get polished typography, forms, buttons, tables, code blocks, and light/dark themes
+        without required classes.
+      </p>
+    </header>
+
+    <main>
+      <section id="install">
+        <h2>Install</h2>
+        <p>Use Vitre directly from npm, a CDN, or a local copy.</p>
+
+        <pre><code>npm install vitre-css</code></pre>
+
+        <pre><code>&lt;link rel="stylesheet" href="https://unpkg.com/vitre-css/vitre.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vitre-css/vitre.css"&gt;</code></pre>
+
+        <p>For local use, copy `vitre.css` and link it from your page:</p>
+
+        <pre><code>&lt;link rel="stylesheet" href="vitre.css"&gt;</code></pre>
+      </section>
+
+      <section id="usage">
+        <h2>Usage</h2>
+        <p>Write ordinary semantic HTML. Vitre styles elements directly.</p>
+
+        <pre><code>&lt;main&gt;
+  &lt;section&gt;
+    &lt;h1&gt;Account settings&lt;/h1&gt;
+    &lt;p&gt;Manage your profile and notification preferences.&lt;/p&gt;
+
+    &lt;form&gt;
+      &lt;label&gt;
+        Email
+        &lt;input type="email" placeholder="you@example.com"&gt;
+      &lt;/label&gt;
+
+      &lt;button&gt;Save changes&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+      </section>
+
+      <section id="themes">
+        <h2>Themes</h2>
+        <p>
+          Vitre follows the user's system preference by default. Use `data-theme`
+          on the root element to force light or dark mode.
+        </p>
+
+        <pre><code>&lt;html data-theme="dark"&gt;</code></pre>
+
+        <form role="group" aria-label="Theme controls">
+          <label>
+            Primary color
+            <input id="primary-color" type="color" value="#3b82f6">
+          </label>
+
+          <label>
+            Theme
+            <select id="theme-select">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </form>
+      </section>
+
+      <section id="tokens">
+        <h2>Core Tokens</h2>
+        <p>Customize Vitre by overriding `--vitre-*` variables after importing the stylesheet.</p>
+
+        <pre><code>:root {
+  --vitre-hue: 168;
+  --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
+  --vitre-radius: 0.5rem;
+  --vitre-measure: 80ch;
+}</code></pre>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Preview</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--vitre-primary</code></td>
+              <td><mark data-vitre-token="primary"></mark></td>
+              <td>Links, focus, and primary actions</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-bg</code></td>
+              <td><mark data-vitre-token="bg"></mark></td>
+              <td>Page background</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-surface</code></td>
+              <td><mark data-vitre-token="surface"></mark></td>
+              <td>Panels and elevated surfaces</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-text</code></td>
+              <td><mark data-vitre-token="text"></mark></td>
+              <td>Primary text</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-muted</code></td>
+              <td><mark data-vitre-token="muted"></mark></td>
+              <td>Secondary text</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="elements">
+        <h2>Element Coverage</h2>
+        <p>Vitre includes defaults for common document and interface elements.</p>
+
+        <ul>
+          <li>Typography: headings, paragraphs, links, lists, blockquotes, marks, and rules</li>
+          <li>Forms: labels, buttons, inputs, textareas, selects, fieldsets, radios, and checkboxes</li>
+          <li>Data: tables, code, keyboard hints, progress, and meters</li>
+          <li>Interactive elements: details, summary, dialog, and dialog-like regions</li>
+        </ul>
+
+        <p>
+          Use the local <a href="../test.html">kitchen sink test page</a> during development
+          to review broader element coverage.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Vitre CSS is documented with GitHub Pages from the repository `docs/` folder.
+      </p>
+    </footer>
+
+    <script>
+      const primaryColor = document.querySelector("#primary-color");
+      const themeSelect = document.querySelector("#theme-select");
+      const root = document.documentElement;
+
+      primaryColor.addEventListener("input", (event) => {
+        root.style.setProperty("--vitre-primary", event.target.value);
+      });
+
+      themeSelect.addEventListener("change", (event) => {
+        const theme = event.target.value;
+
+        if (theme === "system") {
+          root.removeAttribute("data-theme");
+          return;
+        }
+
+        root.dataset.theme = theme;
+      });
+    </script>
+  </body>
+</html>

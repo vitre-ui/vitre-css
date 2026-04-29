@@ -12,7 +12,7 @@
     "url": "https://github.com/appurist/vitre-css/issues"
   },
   "directories": {
-    "doc": "."
+    "doc": "docs"
   },
   "keywords": [
     "css",

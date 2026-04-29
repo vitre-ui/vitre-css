@@ -35,6 +35,8 @@ https://appurist.github.io/vitre-css/
 
 The npm package metadata uses this URL as its `homepage`, so npmjs.org links to the GitHub-hosted documentation site.
 
+The Pages source is `docs/index.html`. In the GitHub repository settings, enable Pages from the `main` branch and `/docs` folder.
+
 ## Usage
 
 Write semantic HTML and let Vitre style the elements directly:

@@ -302,6 +302,44 @@
     background: var(--vitre-mark);
   }
 
+  mark[data-vitre-token] {
+    display: inline-block;
+    inline-size: 7rem;
+    block-size: 2rem;
+    border: var(--vitre-border-width) solid var(--vitre-border);
+    padding: 0;
+    vertical-align: middle;
+    box-shadow: inset 0 0 0 1px hsl(0 0% 100% / 0.18);
+  }
+
+  mark[data-vitre-token="primary"] {
+    background: var(--vitre-primary);
+  }
+
+  mark[data-vitre-token="bg"] {
+    background: var(--vitre-bg);
+  }
+
+  mark[data-vitre-token="surface"] {
+    background: var(--vitre-surface);
+  }
+
+  mark[data-vitre-token="text"] {
+    background: var(--vitre-text);
+  }
+
+  mark[data-vitre-token="muted"] {
+    background: var(--vitre-muted);
+  }
+
+  mark[data-vitre-token="border"] {
+    background: var(--vitre-border);
+  }
+
+  mark[data-vitre-token="code-bg"] {
+    background: var(--vitre-code-bg);
+  }
+
   hr {
     border: 0;
     border-block-start: var(--vitre-border-width) solid var(--vitre-border);
@@ -399,7 +437,7 @@
     inline-size: auto;
   }
 
-  label:has(:where(input:not([type="checkbox"]):not([type="radio"]), textarea, select)) {
+  label:has(:where(input:not([type="checkbox"]):not([type="radio"]), textarea, select, progress, meter)) {
     inline-size: 100%;
   }
 
@@ -448,6 +486,10 @@
     transform: translateY(0);
   }
 
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"]) + :where(button, input[type="button"], input[type="reset"], input[type="submit"]) {
+    margin-inline-start: var(--vitre-space-2);
+  }
+
   :where(input[type="checkbox"], input[type="radio"]) {
     inline-size: 1.05em;
     block-size: 1.05em;
@@ -480,6 +522,23 @@
 
   form {
     display: grid;
+    gap: var(--vitre-space-4);
+  }
+
+  form[role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: var(--vitre-space-6);
+  }
+
+  form[role="group"] label {
+    inline-size: auto;
+  }
+
+  fieldset > p:has(:where(input[type="checkbox"], input[type="radio"])) {
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--vitre-space-4);
   }
 
@@ -555,7 +614,7 @@
   progress,
   meter {
     inline-size: 100%;
-    block-size: 0.8rem;
+    block-size: 1rem;
     accent-color: var(--vitre-primary);
   }
 

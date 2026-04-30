@@ -207,7 +207,11 @@
     margin-inline: auto;
   }
 
-  body > :where(header, main, footer) {
+  body > header {
+    padding-block-start: var(--vitre-space-6);
+  }
+
+  body > :where(main, footer) {
     padding-block: var(--vitre-space-6);
   }
 
@@ -215,7 +219,7 @@
     display: flow-root;
   }
 
-  :where(main, article, section, aside, nav, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"]) {
+  :where(main, article, aside, nav, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"]) {
     margin-block: var(--vitre-space-5);
   }
 

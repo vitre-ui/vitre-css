@@ -2,7 +2,7 @@
 
 The transparent style layer. Classless CSS with a high-end finish. Clear. Light. Vitre.
 
-A great looking web page without any class="..." or style="..." on your elements. Just add `<link rel="stylesheet" href="vitre.css">` (or equivalent) and you're done.
+A great looking web page without any `class="..."` or `style="..."` on your HTML elements. Just add `<link rel="stylesheet" href="vitre.css">` (or equivalent) and you're done.
 
 Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. Drop in `vitre.css` and ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
 

@@ -33,6 +33,8 @@
     "VitreCSS.md"
   ],
   "scripts": {
-    "check:pack": "npm pack --dry-run"
+    "check": "npm pack --dry-run",
+    "publish": "npm publish --access public",
+    "docs": "node -e \"require('fs').copyFileSync('vitre.css','docs/vitre.css')\""
   }
 }

@@ -35,7 +35,7 @@ https://appurist.github.io/vitre-css/
 
 The npm package metadata uses this URL as its `homepage`, so npmjs.org links to the GitHub-hosted documentation site.
 
-The Pages source is `docs/index.html`. In the GitHub repository settings, enable Pages from the `main` branch and `/docs` folder.
+The Pages source is `docs/index.html`. In the GitHub repository settings, enable Pages from the `main` branch and `/docs` folder. The docs site uses `docs/vitre.css`; run `npm run sync:docs` after changing the root stylesheet.
 
 ## Usage
 
@@ -99,14 +99,4 @@ Vitre targets modern browsers and uses current CSS features including cascade la
 
 ## Visual Test Page
 
-Open `test.html` directly in a browser to check the visual look and feel across common semantic elements. It only depends on the local `vitre.css` file.
-
-## Publishing
-
-The package is set up for npm and static CSS hosting. Before publishing, verify the package contents:
-
-```sh
-npm run check:pack
-```
-
-The npm metadata points `main`, `style`, `unpkg`, and `jsdelivr` to `vitre.css`.
+Open `test.html` directly or the `docs` folder in a browser to check the visual look and feel across common semantic elements. It only depends on the local `vitre.css` file.

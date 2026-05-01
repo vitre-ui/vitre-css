@@ -1,6 +1,6 @@
 {
   "name": "vitre-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Classless CSS with a high-end glass finish for semantic HTML.",
   "license": "MIT",
   "homepage": "https://appurist.github.io/vitre-css/",
@@ -30,7 +30,7 @@
     "vitre.css",
     "README.md",
     "LICENSE",
-    "VitreCSS.md"
+    "CHANGELOG.md"
   ],
   "scripts": {
     "check": "npm pack --dry-run",

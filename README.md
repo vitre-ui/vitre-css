@@ -4,7 +4,7 @@ The transparent style layer. Classless CSS with a high-end finish. Clear. Light.
 
 A great looking web page without any `class="..."` or `style="..."` on your HTML elements. Just add `<link rel="stylesheet" href="vitre.css">` (or equivalent) and you're done.
 
-Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. Drop in `vitre.css` and ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
+Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. It honors semantic tags without polluting markup, so ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
 
 ## Install
 
@@ -20,7 +20,7 @@ Install from npm:
 npm install vitre-css
 ```
 
-Use a CDN after publishing:
+Use a CDN:
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/vitre-css/vitre.css">
@@ -29,15 +29,7 @@ Use a CDN after publishing:
 
 ## Documentation
 
-The documentation site is hosted with GitHub Pages:
-
-```text
-https://appurist.github.io/vitre-css/
-```
-
-The npm package metadata uses this URL as its `homepage`, so npmjs.org links to the GitHub-hosted documentation site.
-
-The Pages source is `docs/index.html`. In the GitHub repository settings, enable Pages from the `main` branch and `/docs` folder. The docs site uses `docs/vitre.css`; run `npm run sync:docs` after changing the root stylesheet.
+Read the [documentation and examples](https://appurist.github.io/vitre-css/).
 
 ## Usage
 
@@ -73,7 +65,14 @@ Supported values are `light` and `dark`.
 
 ## Customization
 
-The main customization API is CSS variables. Override `--vitre-*` properties after importing Vitre:
+The main customization API is CSS variables. Add your own stylesheet after Vitre and override `--vitre-*` values there:
+
+```html
+<link rel="stylesheet" href="vitre.css">
+<link rel="stylesheet" href="custom.css">
+```
+
+In `custom.css`, start with variable overrides:
 
 ```css
 :root {
@@ -81,10 +80,21 @@ The main customization API is CSS variables. Override `--vitre-*` properties aft
   --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
   --vitre-radius: 0.5rem;
   --vitre-measure: 80ch;
+  --vitre-button-height: 40px;
 }
 ```
 
 Useful tokens include colors, spacing, typography, surfaces, borders, focus rings, forms, tables, shadows, and code blocks. See `vitre.css` for the full variable surface.
+
+If a selector does not expose the exact customization you need, override the element rule in your stylesheet after Vitre:
+
+```css
+button {
+  text-transform: none;
+}
+```
+
+Prefer variables when they exist. If you find yourself repeatedly overriding the same kind of rule, that is a good sign Vitre should expose another `--vitre-*` variable for that customization.
 
 ## What It Styles
 
@@ -99,6 +109,3 @@ Useful tokens include colors, spacing, typography, surfaces, borders, focus ring
 
 Vitre targets modern browsers and uses current CSS features including cascade layers, `color-mix()`, `:where()`, `:has()`, logical properties, `clamp()`, and `backdrop-filter`. It favors a small, expressive stylesheet over legacy fallbacks.
 
-## Visual Test Page
-
-Open `test.html` directly or the `docs` folder in a browser to check the visual look and feel across common semantic elements. It only depends on the local `vitre.css` file.

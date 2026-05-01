@@ -167,7 +167,17 @@
 
           <label>
             Email
-            <input type="email" placeholder="ada@example.com">
+            <input type="email" placeholder="ada@example.com" required>
+          </label>
+
+          <label>
+            Valid input
+            <input type="text" value="Ready" required>
+          </label>
+
+          <label>
+            Invalid input
+            <input type="email" value="not-an-email" required>
           </label>
 
           <label>
@@ -210,6 +220,7 @@
             <button type="submit">Save changes</button>
             <button type="reset">Reset</button>
             <button type="button" disabled>Disabled</button>
+            <button type="button" aria-busy="true">Loading</button>
           </p>
         </form>
       </section>

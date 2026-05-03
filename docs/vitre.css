@@ -98,6 +98,10 @@
     --vitre-danger: hsl(356 72% 52%);
     --vitre-success: hsl(152 58% 38%);
     --vitre-warning: hsl(38 92% 48%);
+    --vitre-inserted: var(--vitre-success);
+    --vitre-inserted-bg: color-mix(in oklab, var(--vitre-success), transparent 86%);
+    --vitre-deleted: var(--vitre-danger);
+    --vitre-deleted-bg: color-mix(in oklab, var(--vitre-danger), transparent 88%);
     --vitre-busy-color: currentColor;
     --vitre-busy-size: 1em;
     --vitre-busy-border-width: 2px;
@@ -222,11 +226,11 @@
     display: flow-root;
   }
 
-  :where(main, article, aside, nav, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"]) {
+  :where(main, article, aside, nav, search, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"]) {
     margin-block: var(--vitre-space-5);
   }
 
-  :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, figure, blockquote, pre, table, form, details) + :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, figure, blockquote, pre, table, form, details) {
+  :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details) + :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details) {
     margin-block-start: var(--vitre-space-4);
   }
 
@@ -277,6 +281,17 @@
     text-transform: uppercase;
   }
 
+  hgroup > :where(h1, h2, h3, h4, h5, h6, p) {
+    margin-block: 0;
+  }
+
+  hgroup > :where(p, time) {
+    display: block;
+    margin-block-start: var(--vitre-space-2);
+    color: var(--vitre-subtle);
+    font-size: var(--vitre-step--1);
+  }
+
   p {
     color: var(--vitre-muted);
   }
@@ -297,9 +312,55 @@
     font-weight: 720;
   }
 
-  :where(small, figcaption) {
+  :where(small, figcaption, caption, time) {
     color: var(--vitre-subtle);
     font-size: var(--vitre-step--1);
+  }
+
+  address {
+    color: var(--vitre-muted);
+    font-style: normal;
+  }
+
+  abbr[title] {
+    cursor: help;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: color-mix(in oklab, var(--vitre-primary), transparent 35%);
+    text-underline-offset: 0.16em;
+  }
+
+  :where(del, ins) {
+    border-radius: var(--vitre-radius-sm);
+    padding-inline: 0.18em;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.14em;
+  }
+
+  del {
+    color: var(--vitre-deleted);
+    background: var(--vitre-deleted-bg);
+  }
+
+  ins {
+    color: var(--vitre-inserted);
+    background: var(--vitre-inserted-bg);
+    text-decoration-line: underline;
+  }
+
+  :where(sub, sup) {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+  sub {
+    inset-block-end: -0.25em;
+  }
+
+  sup {
+    inset-block-start: -0.5em;
   }
 
   mark {
@@ -353,7 +414,7 @@
     margin-block: var(--vitre-space-6);
   }
 
-  :where(ul, ol) {
+  :where(ul, ol, menu) {
     padding-inline-start: 1.35em;
   }
 
@@ -402,7 +463,7 @@
     background: transparent;
   }
 
-  :where(button, input, textarea, select) {
+  :where(button, input, textarea, select, output) {
     color: var(--vitre-control-text);
   }
 
@@ -444,8 +505,20 @@
     inline-size: auto;
   }
 
-  label:has(:where(input:not([type="checkbox"]):not([type="radio"]), textarea, select, progress, meter)) {
+  label:has(:where(input:not([type="checkbox"]):not([type="radio"]), textarea, select, output, progress, meter)) {
     inline-size: 100%;
+  }
+
+  output {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--vitre-control-height);
+    border: var(--vitre-border-width) solid var(--vitre-border);
+    border-radius: var(--vitre-radius);
+    padding-inline: var(--vitre-space-4);
+    color: var(--vitre-text);
+    font-weight: 650;
+    background: var(--vitre-surface-soft);
   }
 
   :where(input, textarea, select):disabled,
@@ -556,6 +629,21 @@
     gap: var(--vitre-space-4);
   }
 
+  search {
+    display: block;
+  }
+
+  search form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: var(--vitre-space-3);
+  }
+
+  search label {
+    flex: 1 1 16rem;
+  }
+
   form[role="group"] {
     display: flex;
     flex-wrap: wrap;
@@ -583,6 +671,12 @@
     box-shadow: var(--vitre-shadow-sm);
   }
 
+  caption {
+    caption-side: bottom;
+    padding-block-start: var(--vitre-space-3);
+    text-align: start;
+  }
+
   :where(th, td) {
     border-block-end: var(--vitre-border-width) solid var(--vitre-border);
     padding: 0.78rem 0.9rem;
@@ -597,6 +691,20 @@
     letter-spacing: 0.035em;
     text-transform: uppercase;
     background: var(--vitre-surface-soft);
+  }
+
+  thead {
+    background: var(--vitre-surface-soft);
+  }
+
+  tfoot {
+    color: var(--vitre-text);
+    font-weight: 650;
+    background: color-mix(in oklab, var(--vitre-surface-soft), var(--vitre-primary) 4%);
+  }
+
+  tfoot :where(th, td) {
+    border-block-start: var(--vitre-border-width) solid var(--vitre-border-strong);
   }
 
   tr:last-child :where(th, td) {
@@ -674,12 +782,41 @@
 
   img,
   video,
+  audio,
+  embed,
+  object,
   iframe {
     border-radius: var(--vitre-radius-lg);
   }
 
+  audio {
+    display: block;
+    inline-size: 100%;
+  }
+
+  :where(embed, object) {
+    display: block;
+    max-inline-size: 100%;
+    border: var(--vitre-border-width) solid var(--vitre-border);
+    background: var(--vitre-surface);
+  }
+
   iframe {
     border: var(--vitre-border-width) solid var(--vitre-border);
+  }
+
+  ruby {
+    ruby-position: over;
+  }
+
+  rt {
+    color: var(--vitre-subtle);
+    font-size: 0.62em;
+    font-weight: 650;
+  }
+
+  rp {
+    color: var(--vitre-subtle);
   }
 
   main > :where(article, section, aside),

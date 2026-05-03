@@ -99,11 +99,27 @@
         <h2>Typography</h2>
         <p>
           Vitre is designed for ordinary paragraphs, <a href="#">inline links</a>, emphasized text,
-          <strong>strong text</strong>, <mark>marked text</mark>, and small metadata.
+          <strong>strong text</strong>, <mark>marked text</mark>, and small metadata such as
+          <time datetime="2026-05-01">May 1, 2026</time>.
+        </p>
+        <p>
+          Abbreviations like <abbr title="Cascading Style Sheets">CSS</abbr>, inserted text like
+          <ins>new token names</ins>, deleted text like <del>old aliases</del>, and formulas like
+          H<sub>2</sub>O or x<sup>2</sup> should sit cleanly in running copy.
         </p>
         <p><small>Small text should stay legible without competing with body copy.</small></p>
 
+        <address>
+          Appurist Design Systems<br>
+          100 Glass Avenue<br>
+          Halifax, NS
+        </address>
+
         <h3>Heading Levels</h3>
+        <hgroup>
+          <h1>Grouped Heading</h1>
+          <p>Compact supporting text inside an hgroup.</p>
+        </hgroup>
         <h1>Heading One</h1>
         <h2>Heading Two</h2>
         <h3>Heading Three</h3>
@@ -122,6 +138,16 @@
           <li>Write semantic HTML</li>
           <li>Tweak variables when needed</li>
         </ol>
+        <menu>
+          <li>Open command</li>
+          <li>Save command</li>
+          <li>Export command</li>
+        </menu>
+
+        <p>
+          Ruby annotations should remain legible:
+          <ruby>透明<rp>(</rp><rt>toumei</rt><rp>)</rp></ruby>.
+        </p>
 
         <blockquote>
           <p>
@@ -159,6 +185,21 @@
 
       <section id="forms">
         <h2>Forms</h2>
+        <search>
+          <form>
+            <label>
+              Search
+              <input type="search" list="search-suggestions" placeholder="Find an element">
+            </label>
+            <datalist id="search-suggestions">
+              <option value="button"></option>
+              <option value="dialog"></option>
+              <option value="table"></option>
+            </datalist>
+            <button type="submit">Search</button>
+          </form>
+        </search>
+
         <form>
           <label>
             Name
@@ -208,7 +249,12 @@
 
           <label>
             Range input
-            <input type="range" min="0" max="100" value="64">
+            <input id="range" type="range" min="0" max="100" value="64">
+          </label>
+
+          <label>
+            Output
+            <output for="range">64</output>
           </label>
 
           <label>
@@ -228,6 +274,7 @@
       <section id="data">
         <h2>Data And Code</h2>
         <table>
+          <caption>Token examples use the same table rhythm as application data.</caption>
           <thead>
             <tr>
               <th>Token</th>
@@ -252,6 +299,12 @@
               <td><code>0 18px 48px ...</code></td>
             </tr>
           </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td colspan="2">Three sample tokens</td>
+            </tr>
+          </tfoot>
         </table>
 
         <p>Inline code should work with <code>const theme = "vitre";</code> and keyboard hints like <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
@@ -260,6 +313,13 @@
   --vitre-hue: 168;
   --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
 }</code></pre>
+
+        <h3>Embedded Media</h3>
+        <audio controls></audio>
+        <object type="text/html" data="about:blank" width="100%" height="120">
+          Embedded object fallback.
+        </object>
+        <embed type="text/html" src="about:blank" width="100%" height="120">
       </section>
 
       <section id="interactive">

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 - 2026-05-03
+
+- Added nested semantic structure styling for article cards with direct header and footer regions.
+- Added card treatment for articles nested inside main or section content.
+- Added nested aside callouts for supplementary content inside articles and sections.
+- Added definition-list term and description styling for `dt` and `dd`.
+- Added role-based banner styling for `[role="alert"]`, `[role="status"]`, and `[role="note"]` with dedicated `--vitre-alert-*`, `--vitre-status-*`, and `--vitre-note-*` variables.
+- Added neutral styling for `dialog > article` so native dialog content can use semantic article structure without duplicate panel chrome.
+- Expanded the kitchen sink page and docs coverage summary for the new semantic structure patterns.
+
 ## 1.0.2 - 2026-05-03
 
 - Added explicit styling for additional semantic HTML elements, including captions, table footers, abbreviations, addresses, timestamps, inserted and deleted text, subscript and superscript text, outputs, embedded media, search regions, menus, heading groups, and ruby annotations.

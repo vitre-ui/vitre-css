@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.0.2
+ * Vitre CSS v1.1.0
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -102,6 +102,12 @@
     --vitre-inserted-bg: color-mix(in oklab, var(--vitre-success), transparent 86%);
     --vitre-deleted: var(--vitre-danger);
     --vitre-deleted-bg: color-mix(in oklab, var(--vitre-danger), transparent 88%);
+    --vitre-alert: var(--vitre-danger);
+    --vitre-alert-bg: color-mix(in oklab, var(--vitre-danger), transparent 88%);
+    --vitre-status: var(--vitre-success);
+    --vitre-status-bg: color-mix(in oklab, var(--vitre-success), transparent 88%);
+    --vitre-note: var(--vitre-warning);
+    --vitre-note-bg: color-mix(in oklab, var(--vitre-warning), transparent 86%);
     --vitre-busy-color: currentColor;
     --vitre-busy-size: 1em;
     --vitre-busy-border-width: 2px;
@@ -226,11 +232,11 @@
     display: flow-root;
   }
 
-  :where(main, article, aside, nav, search, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"]) {
+  :where(main, article, aside, nav, search, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"], [role="alert"], [role="status"], [role="note"]) {
     margin-block: var(--vitre-space-5);
   }
 
-  :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details) + :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details) {
+  :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details, [role="alert"], [role="status"], [role="note"]) + :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details, [role="alert"], [role="status"], [role="note"]) {
     margin-block-start: var(--vitre-space-4);
   }
 
@@ -361,6 +367,19 @@
 
   sup {
     inset-block-start: -0.5em;
+  }
+
+  dt {
+    color: var(--vitre-text);
+    font-weight: 720;
+  }
+
+  dd {
+    color: var(--vitre-muted);
+  }
+
+  dd + dt {
+    margin-block-start: var(--vitre-space-3);
   }
 
   mark {
@@ -820,6 +839,7 @@
   }
 
   main > :where(article, section, aside),
+  :where(main, section) > article,
   body > article {
     border: var(--vitre-border-width) solid var(--vitre-glass-border);
     border-radius: var(--vitre-radius-lg);
@@ -827,6 +847,71 @@
     background: var(--vitre-glass);
     box-shadow: var(--vitre-shadow);
     backdrop-filter: var(--vitre-backdrop-blur);
+  }
+
+  :where(article, section, aside) > header {
+    margin-block-end: var(--vitre-space-5);
+  }
+
+  :where(article, section, aside) > header > :where(h1, h2, h3, h4, h5, h6, p, time) {
+    margin-block: 0;
+  }
+
+  :where(article, section, aside) > header > :where(p, time) {
+    display: block;
+    margin-block-start: var(--vitre-space-2);
+    color: var(--vitre-subtle);
+    font-size: var(--vitre-step--1);
+  }
+
+  :where(article, section, aside) > footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--vitre-space-3);
+    margin-block-start: var(--vitre-space-5);
+    border-block-start: var(--vitre-border-width) solid var(--vitre-border);
+    padding-block-start: var(--vitre-space-4);
+  }
+
+  dialog > article {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  :where(article, section) > aside {
+    border: var(--vitre-border-width) solid var(--vitre-border);
+    border-inline-start: 0.32rem solid var(--vitre-primary);
+    border-radius: var(--vitre-radius-lg);
+    padding: var(--vitre-space-4);
+    color: var(--vitre-muted);
+    background: var(--vitre-surface-soft);
+  }
+
+  :where([role="alert"], [role="status"], [role="note"]) {
+    border: var(--vitre-border-width) solid var(--vitre-border);
+    border-radius: var(--vitre-radius-lg);
+    padding: var(--vitre-space-4);
+    color: var(--vitre-text);
+  }
+
+  [role="alert"] {
+    border-color: color-mix(in oklab, var(--vitre-alert), var(--vitre-border) 45%);
+    background: var(--vitre-alert-bg);
+  }
+
+  [role="status"] {
+    border-color: color-mix(in oklab, var(--vitre-status), var(--vitre-border) 45%);
+    background: var(--vitre-status-bg);
+  }
+
+  [role="note"] {
+    border-color: color-mix(in oklab, var(--vitre-note), var(--vitre-border) 45%);
+    background: var(--vitre-note-bg);
   }
 
   @media (prefers-reduced-motion: reduce) {

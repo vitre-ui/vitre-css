@@ -9,8 +9,10 @@
   <body>
     <header>
       <nav aria-label="Primary">
+        <a href="./">Docs</a>
         <a href="#colors">Colors</a>
         <a href="#typography">Typography</a>
+        <a href="#structure">Structure</a>
         <a href="#forms">Forms</a>
         <a href="#data">Data</a>
         <a href="#interactive">Interactive</a>
@@ -21,6 +23,11 @@
         A static test page for checking how <strong>vitre.css</strong> styles raw semantic HTML.
         Open this file directly or serve the repository with any static server.
       </p>
+      <ul>
+        <li>npmjs.org: <a href="https://www.npmjs.com/package/vitre-css">https://www.npmjs.com/package/vitre-css</a></li>
+        <li>GitHub repo: <a href="https://github.com/appurist/vitre-css">https://github.com/appurist/vitre-css</a></li>
+        <li>GitHub docs: <a href="https://appurist.github.io/vitre-css/">https://appurist.github.io/vitre-css/</a></li>
+      </ul>
     </header>
 
     <main>
@@ -181,6 +188,39 @@
             <button>Close</button>
           </form>
         </article>
+      </section>
+
+      <section id="structure">
+        <h2>Semantic Structure</h2>
+
+        <article>
+          <header>
+            <h3>Article Card</h3>
+            <p>Nested headers and footers create a natural card anatomy.</p>
+          </header>
+          <p>
+            Articles inside sections inherit the same glass panel treatment as top-level
+            content panels.
+          </p>
+          <aside>
+            Nested asides work as supplementary callouts inside article and section content.
+          </aside>
+          <footer>
+            <small>Published <time datetime="2026-05-03">May 3, 2026</time></small>
+            <button type="button">Read more</button>
+          </footer>
+        </article>
+
+        <dl>
+          <dt>Article</dt>
+          <dd>A self-contained composition that can render as a semantic card.</dd>
+          <dt>Aside</dt>
+          <dd>Supplementary content that should stand apart from the main flow.</dd>
+        </dl>
+
+        <div role="status">Your changes have been saved successfully.</div>
+        <div role="note">This note highlights contextual information.</div>
+        <div role="alert">This alert needs attention before continuing.</div>
       </section>
 
       <section id="forms">

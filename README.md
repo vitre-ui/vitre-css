@@ -6,6 +6,12 @@ A great looking web page without any `class="..."` or `style="..."` on your HTML
 
 Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. It honors semantic tags without polluting markup, so ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
 
+## Links
+
+- npmjs.org: https://www.npmjs.com/package/vitre-css
+- GitHub repo: https://github.com/appurist/vitre-css
+- GitHub docs: https://appurist.github.io/vitre-css/
+
 ## Install
 
 Use the file directly:

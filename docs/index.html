@@ -9,11 +9,11 @@
   <body>
     <header>
       <nav aria-label="Documentation">
+        <a href="#elements">Elements</a>
         <a href="#install">Install</a>
         <a href="#usage">Usage</a>
+        <a href="#tokens">Variables</a>
         <a href="#themes">Themes</a>
-        <a href="#tokens">Tokens</a>
-        <a href="#elements">Elements</a>
       </nav>
 
       <h1>Vitre CSS</h1>
@@ -27,9 +27,32 @@
         This page is simple HTML elements like <code>&lt;div&gt;</code> and <code>&lt;p&gt;</code> but includes vitre.css for
         formatting. No style="..." or class="..." needed! You can see the results here!
       </p>
+      <ul>
+        <li>npmjs.org: <a href="https://www.npmjs.com/package/vitre-css">https://www.npmjs.com/package/vitre-css</a></li>
+        <li>GitHub repo: <a href="https://github.com/appurist/vitre-css">https://github.com/appurist/vitre-css</a></li>
+        <li>GitHub docs: <a href="https://appurist.github.io/vitre-css/">https://appurist.github.io/vitre-css/</a></li>
+      </ul>
     </header>
 
     <main>
+      <section id="elements">
+        <h2>Element Coverage</h2>
+        <p>Vitre includes defaults for common document and interface elements.</p>
+
+        <ul>
+          <li>Typography: headings, paragraphs, links, lists, blockquotes, marks, edits, metadata, and rules</li>
+          <li>Forms: labels, buttons, inputs, textareas, selects, outputs, fieldsets, radios, and checkboxes</li>
+          <li>Data: tables, captions, code, keyboard hints, progress, and meters</li>
+          <li>Structure: article cards, nested asides, definition lists, and role-based banners</li>
+          <li>Interactive and embedded elements: details, summary, dialog, audio, objects, and dialog-like regions</li>
+        </ul>
+
+        <p>
+          Use the <a href="test.html">kitchen sink test page</a> during development
+          to review broader element coverage.
+        </p>
+      </section>
+
       <section id="install">
         <h2>Install</h2>
         <p>Use Vitre directly from npm, a CDN, or a local copy.</p>
@@ -65,34 +88,8 @@
 &lt;/main&gt;</code></pre>
       </section>
 
-      <section id="themes">
-        <h2>Themes</h2>
-        <p>
-          Vitre follows the user's system preference by default. Use `data-theme`
-          on the root element to force light or dark mode.
-        </p>
-
-        <pre><code>&lt;html data-theme="dark"&gt;</code></pre>
-
-        <form role="group" aria-label="Theme controls">
-          <label>
-            Primary color
-            <input id="primary-color" type="color" value="#3b82f6">
-          </label>
-
-          <label>
-            Theme
-            <select id="theme-select">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
-        </form>
-      </section>
-
       <section id="tokens">
-        <h2>Core Tokens</h2>
+        <h2>CSS Variables</h2>
         <p>Customize Vitre by overriding `--vitre-*` variables after importing the stylesheet.</p>
 
         <pre><code>:root {
@@ -140,21 +137,30 @@
         </table>
       </section>
 
-      <section id="elements">
-        <h2>Element Coverage</h2>
-        <p>Vitre includes defaults for common document and interface elements.</p>
-
-        <ul>
-          <li>Typography: headings, paragraphs, links, lists, blockquotes, marks, edits, metadata, and rules</li>
-          <li>Forms: labels, buttons, inputs, textareas, selects, outputs, fieldsets, radios, and checkboxes</li>
-          <li>Data: tables, captions, code, keyboard hints, progress, and meters</li>
-          <li>Interactive and embedded elements: details, summary, dialog, audio, objects, and dialog-like regions</li>
-        </ul>
-
+      <section id="themes">
+        <h2>Themes</h2>
         <p>
-          Use the <a href="test.html">kitchen sink test page</a> during development
-          to review broader element coverage.
+          Vitre follows the user's system preference by default. Use `data-theme`
+          on the root element to force light or dark mode.
         </p>
+
+        <pre><code>&lt;html data-theme="dark"&gt;</code></pre>
+
+        <form role="group" aria-label="Theme controls">
+          <label>
+            Primary color
+            <input id="primary-color" type="color" value="#3b82f6">
+          </label>
+
+          <label>
+            Theme
+            <select id="theme-select">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </form>
       </section>
     </main>
 

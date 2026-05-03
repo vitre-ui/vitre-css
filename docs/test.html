@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vitre CSS Kitchen Sink</title>
+    <link rel="stylesheet" href="vitre.css">
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Primary">
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#forms">Forms</a>
+        <a href="#data">Data</a>
+        <a href="#interactive">Interactive</a>
+      </nav>
+
+      <h1>Vitre CSS Kitchen Sink</h1>
+      <p>
+        A static test page for checking how <strong>vitre.css</strong> styles raw semantic HTML.
+        Open this file directly or serve the repository with any static server.
+      </p>
+    </header>
+
+    <main>
+      <section id="colors">
+        <h2>Current Color Scheme</h2>
+        <p>
+          These swatches use Vitre variables directly, so they update with system theme changes
+          or an explicit <code>data-theme</code> override.
+        </p>
+
+        <form role="group" aria-label="Theme controls">
+          <label>
+            Primary color
+            <input id="primary-color" type="color" value="#3b82f6">
+          </label>
+
+          <label>
+            Theme
+            <select id="theme-select">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Preview</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--vitre-primary</code></td>
+              <td><mark data-vitre-token="primary"></mark></td>
+              <td>Links, focus, primary actions</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-bg</code></td>
+              <td><mark data-vitre-token="bg"></mark></td>
+              <td>Page background</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-surface</code></td>
+              <td><mark data-vitre-token="surface"></mark></td>
+              <td>Glass panels and elevated surfaces</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-text</code></td>
+              <td><mark data-vitre-token="text"></mark></td>
+              <td>Primary text</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-muted</code></td>
+              <td><mark data-vitre-token="muted"></mark></td>
+              <td>Body copy and secondary text</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-border</code></td>
+              <td><mark data-vitre-token="border"></mark></td>
+              <td>Control and table borders</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-code-bg</code></td>
+              <td><mark data-vitre-token="code-bg"></mark></td>
+              <td>Inline and block code backgrounds</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="typography">
+        <h2>Typography</h2>
+        <p>
+          Vitre is designed for ordinary paragraphs, <a href="#">inline links</a>, emphasized text,
+          <strong>strong text</strong>, <mark>marked text</mark>, and small metadata such as
+          <time datetime="2026-05-01">May 1, 2026</time>.
+        </p>
+        <p>
+          Abbreviations like <abbr title="Cascading Style Sheets">CSS</abbr>, inserted text like
+          <ins>new token names</ins>, deleted text like <del>old aliases</del>, and formulas like
+          H<sub>2</sub>O or x<sup>2</sup> should sit cleanly in running copy.
+        </p>
+        <p><small>Small text should stay legible without competing with body copy.</small></p>
+
+        <address>
+          Appurist Design Systems<br>
+          100 Glass Avenue<br>
+          Halifax, NS
+        </address>
+
+        <h3>Heading Levels</h3>
+        <hgroup>
+          <h1>Grouped Heading</h1>
+          <p>Compact supporting text inside an hgroup.</p>
+        </hgroup>
+        <h1>Heading One</h1>
+        <h2>Heading Two</h2>
+        <h3>Heading Three</h3>
+        <h4>Heading Four</h4>
+        <h5>Heading Five</h5>
+        <h6>Heading Six</h6>
+
+        <h3>Lists</h3>
+        <ul>
+          <li>Classless defaults for common markup</li>
+          <li>Themeable design tokens</li>
+          <li>Modern browser features</li>
+        </ul>
+        <ol>
+          <li>Include the stylesheet</li>
+          <li>Write semantic HTML</li>
+          <li>Tweak variables when needed</li>
+        </ol>
+        <menu>
+          <li>Open command</li>
+          <li>Save command</li>
+          <li>Export command</li>
+        </menu>
+
+        <p>
+          Ruby annotations should remain legible:
+          <ruby>透明<rp>(</rp><rt>toumei</rt><rp>)</rp></ruby>.
+        </p>
+
+        <blockquote>
+          <p>
+            Classless CSS should make the common path beautiful while leaving customization
+            available through a clear variable surface.
+          </p>
+        </blockquote>
+
+        <hr>
+
+        <figure>
+          <svg role="img" aria-label="Abstract glass panel sample" viewBox="0 0 720 240">
+            <rect width="720" height="240" rx="28" fill="hsl(214 88% 56% / 0.16)"></rect>
+            <circle cx="180" cy="120" r="72" fill="hsl(168 76% 42% / 0.28)"></circle>
+            <circle cx="540" cy="118" r="92" fill="hsl(38 92% 48% / 0.24)"></circle>
+            <path d="M120 172 C 230 62, 356 236, 600 74" fill="none" stroke="hsl(214 88% 56%)" stroke-width="16" stroke-linecap="round"></path>
+          </svg>
+          <figcaption>An inline SVG to check media sizing, radius, and caption treatment.</figcaption>
+        </figure>
+      </section>
+
+      <section id="dialog">
+        <h2>Dialog</h2>
+        <article role="dialog" aria-labelledby="dialog-preview-title">
+          <h3 id="dialog-preview-title">Dialog Preview</h3>
+          <p>
+            This non-modal preview checks dialog-like content without covering later sections.
+            The Close button is intentionally inactive in this CSS-only test.
+          </p>
+          <form method="dialog">
+            <button>Close</button>
+          </form>
+        </article>
+      </section>
+
+      <section id="forms">
+        <h2>Forms</h2>
+        <search>
+          <form>
+            <label>
+              Search
+              <input type="search" list="search-suggestions" placeholder="Find an element">
+            </label>
+            <datalist id="search-suggestions">
+              <option value="button"></option>
+              <option value="dialog"></option>
+              <option value="table"></option>
+            </datalist>
+            <button type="submit">Search</button>
+          </form>
+        </search>
+
+        <form>
+          <label>
+            Name
+            <input type="text" placeholder="Ada Lovelace">
+          </label>
+
+          <label>
+            Email
+            <input type="email" placeholder="ada@example.com" required>
+          </label>
+
+          <label>
+            Valid input
+            <input type="text" value="Ready" required>
+          </label>
+
+          <label>
+            Invalid input
+            <input type="email" value="not-an-email" required>
+          </label>
+
+          <label>
+            Select input
+            <select>
+              <option>First option</option>
+              <option>Second option</option>
+              <option>Third option</option>
+            </select>
+          </label>
+
+          <label>
+            Notes
+            <textarea placeholder="Describe the interface you want to style."></textarea>
+          </label>
+
+          <fieldset>
+            <legend>Preferences</legend>
+            <p>
+              <label><input type="checkbox" checked> Enable glass surfaces</label>
+              <label><input type="checkbox"> Reduce motion</label>
+            </p>
+            <p>
+              <label><input type="radio" name="density" checked> Comfortable density</label>
+              <label><input type="radio" name="density"> Compact density</label>
+            </p>
+          </fieldset>
+
+          <label>
+            Range input
+            <input id="range" type="range" min="0" max="100" value="64">
+          </label>
+
+          <label>
+            Output
+            <output for="range">64</output>
+          </label>
+
+          <label>
+            Color picker
+            <input type="color" value="#3b82f6">
+          </label>
+
+          <p>
+            <button type="submit">Save changes</button>
+            <button type="reset">Reset</button>
+            <button type="button" disabled>Disabled</button>
+            <button type="button" aria-busy="true">Loading</button>
+          </p>
+        </form>
+      </section>
+
+      <section id="data">
+        <h2>Data And Code</h2>
+        <table>
+          <caption>Token examples use the same table rhythm as application data.</caption>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Purpose</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--vitre-primary</code></td>
+              <td>Primary action and link color</td>
+              <td><code>hsl(214 88% 56%)</code></td>
+            </tr>
+            <tr>
+              <td><code>--vitre-radius</code></td>
+              <td>Default control radius</td>
+              <td><code>0.75rem</code></td>
+            </tr>
+            <tr>
+              <td><code>--vitre-shadow</code></td>
+              <td>Elevated surface shadow</td>
+              <td><code>0 18px 48px ...</code></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td colspan="2">Three sample tokens</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>Inline code should work with <code>const theme = "vitre";</code> and keyboard hints like <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p>
+
+        <pre><code>:root {
+  --vitre-hue: 168;
+  --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
+}</code></pre>
+
+        <h3>Embedded Media</h3>
+        <audio controls></audio>
+        <object type="text/html" data="about:blank" width="100%" height="120">
+          Embedded object fallback.
+        </object>
+        <embed type="text/html" src="about:blank" width="100%" height="120">
+      </section>
+
+      <section id="interactive">
+        <h2>Interactive Elements</h2>
+        <details>
+          <summary>Theme behavior</summary>
+          <p>
+            Vitre follows system color preference by default and supports explicit
+            <code>data-theme="light"</code> and <code>data-theme="dark"</code> overrides.
+          </p>
+        </details>
+
+        <p>
+          <label>
+            Progress
+            <progress max="100" value="72">72%</progress>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            Meter
+            <meter min="0" max="100" low="35" high="80" optimum="90" value="68">68</meter>
+          </label>
+        </p>
+
+      </section>
+    </main>
+
+    <footer>
+      <p>Vitre CSS test page. Update this file when new semantic element styling is added.</p>
+    </footer>
+
+    <script>
+      const primaryColor = document.querySelector("#primary-color");
+      const themeSelect = document.querySelector("#theme-select");
+      const root = document.documentElement;
+
+      primaryColor.addEventListener("input", (event) => {
+        root.style.setProperty("--vitre-primary", event.target.value);
+      });
+
+      themeSelect.addEventListener("change", (event) => {
+        const theme = event.target.value;
+
+        if (theme === "system") {
+          root.removeAttribute("data-theme");
+          return;
+        }
+
+        root.dataset.theme = theme;
+      });
+    </script>
+  </body>
+</html>

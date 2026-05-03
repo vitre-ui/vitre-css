@@ -34,8 +34,7 @@
   ],
   "scripts": {
     "check": "npm pack --dry-run",
-    "publish": "npm publish --access public",
-    "sync:docs": "node -e \"require('fs').copyFileSync('vitre.css','docs/vitre.css')\"",
-    "docs": "node -e \"require('fs').copyFileSync('vitre.css','docs/vitre.css')\""
+    "docs": "node -e \"const fs=require('fs'); fs.copyFileSync('vitre.css','docs/vitre.css'); fs.copyFileSync('test.html','docs/test.html')\"",
+    "release": "npm publish --access public"
   }
 }

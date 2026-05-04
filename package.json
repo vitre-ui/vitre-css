@@ -1,6 +1,6 @@
 {
   "name": "vitre-css",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Classless CSS with a high-end glass finish for semantic HTML.",
   "license": "MIT",
   "homepage": "https://appurist.github.io/vitre-css/",
@@ -34,7 +34,7 @@
   ],
   "scripts": {
     "check": "npm pack --dry-run",
-    "docs": "node -e \"const fs=require('fs'); fs.copyFileSync('vitre.css','docs/vitre.css'); fs.copyFileSync('test.html','docs/test.html')\"",
+    "docs": "node -e \"const fs=require('fs'); fs.copyFileSync('vitre.css','docs/vitre.css'); fs.copyFileSync('test.html','docs/test.html'); fs.mkdirSync('docs/media',{recursive:true}); fs.copyFileSync('media/september.mp3','docs/media/september.mp3'); fs.copyFileSync('media/drowning-in-life-clip.mp4','docs/media/drowning-in-life-clip.mp4')\"",
     "release": "npm publish --access public"
   }
 }

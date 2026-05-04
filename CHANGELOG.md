@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 - 2026-05-03
+
+- Added explicit spacing between adjacent card-rendered semantic panels, including document sections, articles, asides, and nested section articles.
+- Split theme palette variables into `vitre.light` and `vitre.dark` cascade layers while keeping shared variables in `vitre.theme`.
+- Replaced blank kitchen sink media placeholders with local MP3 and MP4 examples, a YouTube iframe embed, and live object/embed examples.
+
 ## 1.1.0 - 2026-05-03
 
 - Added nested semantic structure styling for article cards with direct header and footer regions.

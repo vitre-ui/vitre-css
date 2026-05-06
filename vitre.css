@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.1.1
+ * Vitre CSS v1.2.0
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -101,8 +101,26 @@
     --vitre-busy-size: 1em;
     --vitre-busy-border-width: 2px;
 
-    --vitre-focus: 0 0 0 3px color-mix(in oklab, var(--vitre-primary), transparent 70%);
+    --vitre-focus-color: color-mix(in oklab, var(--vitre-primary), transparent 70%);
+    --vitre-focus: 0 0 0 3px var(--vitre-focus-color);
     --vitre-backdrop-blur: blur(18px) saturate(160%);
+
+    --vitre-page-glow: color-mix(in oklab, var(--vitre-primary), transparent 78%);
+    --vitre-page-tint: color-mix(in oklab, var(--vitre-bg), var(--vitre-primary) 5%);
+    --vitre-link-decoration: color-mix(in oklab, var(--vitre-primary), transparent 55%);
+    --vitre-abbr-decoration: color-mix(in oklab, var(--vitre-primary), transparent 35%);
+    --vitre-kbd-shadow: color-mix(in oklab, var(--vitre-border), transparent 20%);
+    --vitre-code-bg-end: color-mix(in oklab, var(--vitre-code-bg), black 3%);
+    --vitre-invalid-focus: color-mix(in oklab, var(--vitre-danger), transparent 78%);
+    --vitre-valid-border: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
+    --vitre-button-border: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
+    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 12%);
+    --vitre-busy-border: color-mix(in oklab, var(--vitre-busy-color), transparent 70%);
+    --vitre-table-foot-bg: color-mix(in oklab, var(--vitre-surface-soft), var(--vitre-primary) 4%);
+    --vitre-table-row-hover: color-mix(in oklab, var(--vitre-primary), transparent 94%);
+    --vitre-alert-border: color-mix(in oklab, var(--vitre-alert), var(--vitre-border) 45%);
+    --vitre-status-border: color-mix(in oklab, var(--vitre-status), var(--vitre-border) 45%);
+    --vitre-note-border: color-mix(in oklab, var(--vitre-note), var(--vitre-border) 45%);
 
     --vitre-control-bg: var(--vitre-surface-strong);
     --vitre-control-border: var(--vitre-border);
@@ -191,8 +209,8 @@
     min-block-size: 100%;
     accent-color: var(--vitre-primary);
     background:
-      radial-gradient(circle at top left, color-mix(in oklab, var(--vitre-primary), transparent 78%), transparent 34rem),
-      linear-gradient(135deg, var(--vitre-bg), color-mix(in oklab, var(--vitre-bg), var(--vitre-primary) 5%));
+      radial-gradient(circle at top left, var(--vitre-page-glow), transparent 34rem),
+      linear-gradient(135deg, var(--vitre-bg), var(--vitre-page-tint));
   }
 
   body {
@@ -294,7 +312,7 @@
 
   a {
     color: var(--vitre-primary);
-    text-decoration-color: color-mix(in oklab, var(--vitre-primary), transparent 55%);
+    text-decoration-color: var(--vitre-link-decoration);
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.18em;
   }
@@ -322,7 +340,7 @@
     cursor: help;
     text-decoration-line: underline;
     text-decoration-style: dotted;
-    text-decoration-color: color-mix(in oklab, var(--vitre-primary), transparent 35%);
+    text-decoration-color: var(--vitre-abbr-decoration);
     text-underline-offset: 0.16em;
   }
 
@@ -453,7 +471,7 @@
   }
 
   kbd {
-    box-shadow: inset 0 -0.12em 0 color-mix(in oklab, var(--vitre-border), transparent 20%);
+    box-shadow: inset 0 -0.12em 0 var(--vitre-kbd-shadow);
   }
 
   pre {
@@ -462,7 +480,7 @@
     border-radius: var(--vitre-radius-lg);
     padding: var(--vitre-space-5);
     color: var(--vitre-code-text);
-    background: linear-gradient(145deg, var(--vitre-code-bg), color-mix(in oklab, var(--vitre-code-bg), black 3%));
+    background: linear-gradient(145deg, var(--vitre-code-bg), var(--vitre-code-bg-end));
     box-shadow: var(--vitre-shadow-sm);
   }
 
@@ -538,11 +556,11 @@
 
   :where(input, textarea, select):user-invalid {
     border-color: var(--vitre-danger);
-    box-shadow: 0 0 0 3px color-mix(in oklab, var(--vitre-danger), transparent 78%);
+    box-shadow: 0 0 0 3px var(--vitre-invalid-focus);
   }
 
   :where(input, textarea, select):user-valid {
-    border-color: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
+    border-color: var(--vitre-valid-border);
   }
 
   button,
@@ -554,7 +572,7 @@
     gap: var(--vitre-space-2);
     min-block-size: var(--vitre-button-height);
     block-size: var(--vitre-button-height);
-    border-color: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
+    border-color: var(--vitre-button-border);
     padding: 0 var(--vitre-button-padding-inline);
     color: var(--vitre-primary-ink);
     font-size: var(--vitre-button-font-size);
@@ -564,7 +582,7 @@
     text-decoration: none;
     text-transform: uppercase;
     background:
-      linear-gradient(180deg, color-mix(in oklab, var(--vitre-primary), white 12%), var(--vitre-primary));
+      linear-gradient(180deg, var(--vitre-button-bg-start), var(--vitre-primary));
     cursor: pointer;
     transition:
       transform 140ms ease,
@@ -593,7 +611,7 @@
     content: "";
     inline-size: var(--vitre-busy-size);
     block-size: var(--vitre-busy-size);
-    border: var(--vitre-busy-border-width) solid color-mix(in oklab, var(--vitre-busy-color), transparent 70%);
+    border: var(--vitre-busy-border-width) solid var(--vitre-busy-border);
     border-block-start-color: var(--vitre-busy-color);
     border-radius: 999px;
     animation: vitre-spin 720ms linear infinite;
@@ -709,7 +727,7 @@
   tfoot {
     color: var(--vitre-text);
     font-weight: 650;
-    background: color-mix(in oklab, var(--vitre-surface-soft), var(--vitre-primary) 4%);
+    background: var(--vitre-table-foot-bg);
   }
 
   tfoot :where(th, td) {
@@ -721,7 +739,7 @@
   }
 
   tbody tr:hover {
-    background: color-mix(in oklab, var(--vitre-primary), transparent 94%);
+    background: var(--vitre-table-row-hover);
   }
 
   details {
@@ -896,17 +914,17 @@
   }
 
   [role="alert"] {
-    border-color: color-mix(in oklab, var(--vitre-alert), var(--vitre-border) 45%);
+    border-color: var(--vitre-alert-border);
     background: var(--vitre-alert-bg);
   }
 
   [role="status"] {
-    border-color: color-mix(in oklab, var(--vitre-status), var(--vitre-border) 45%);
+    border-color: var(--vitre-status-border);
     background: var(--vitre-status-bg);
   }
 
   [role="note"] {
-    border-color: color-mix(in oklab, var(--vitre-note), var(--vitre-border) 45%);
+    border-color: var(--vitre-note-border);
     background: var(--vitre-note-bg);
   }
 

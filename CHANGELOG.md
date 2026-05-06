@@ -1,10 +1,18 @@
 # Changelog
 
+## 1.2.0 - 2026-05-06
+
+- Split theme palette variables into `vitre.light` and `vitre.dark` cascade layers while keeping shared variables in `vitre.theme`.
+- Refactored `color-mix()` usage into named dependent variables so generated colors remain overrideable.
+- Added explicit spacing between adjacent card-rendered semantic panels, including document sections, articles, asides, and nested section articles.
+- Replaced blank kitchen sink media placeholders with local MP3 and MP4 examples, a YouTube iframe embed, and live object/embed examples.
+
 ## 1.1.1 - 2026-05-03
 
 - Added explicit spacing between adjacent card-rendered semantic panels, including document sections, articles, asides, and nested section articles.
 - Split theme palette variables into `vitre.light` and `vitre.dark` cascade layers while keeping shared variables in `vitre.theme`.
 - Replaced blank kitchen sink media placeholders with local MP3 and MP4 examples, a YouTube iframe embed, and live object/embed examples.
+- Refactored `color-mix()` usage into named dependent variables so generated colors remain overrideable.
 
 ## 1.1.0 - 2026-05-03
 

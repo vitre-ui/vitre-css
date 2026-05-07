@@ -1,15 +1,15 @@
 {
   "name": "vitre-css",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Classless CSS with a high-end glass finish for semantic HTML.",
   "license": "MIT",
-  "homepage": "https://appurist.github.io/vitre-css/",
+  "homepage": "https://vitre-ui.github.io/vitre-css/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appurist/vitre-css.git"
+    "url": "git+https://github.com/vitre-ui/vitre-css.git"
   },
   "bugs": {
-    "url": "https://github.com/appurist/vitre-css/issues"
+    "url": "https://github.com/vitre-ui/vitre-css/issues"
   },
   "directories": {
     "doc": "docs"

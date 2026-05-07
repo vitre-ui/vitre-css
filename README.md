@@ -11,8 +11,8 @@ Work has begun on a related but opposite project, [vitre-js](https://www.npmjs.c
 
 ## Links
 
-- GitHub docs: https://appurist.github.io/vitre-css/
-- GitHub repo: https://github.com/appurist/vitre-css
+- GitHub docs: https://vitre-ui.github.io/vitre-css/
+- GitHub repo: https://github.com/vitre-ui/vitre-css
 - npmjs.org: https://www.npmjs.com/package/vitre-css
 - vitre-js: https://www.npmjs.com/package/vitre-js
 
@@ -40,7 +40,7 @@ Use a CDN:
 
 ## Documentation
 
-Read the [documentation and examples](https://appurist.github.io/vitre-css/).
+Read the [documentation and examples](https://vitre-ui.github.io/vitre-css/).
 
 ## Usage
 

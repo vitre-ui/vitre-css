@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-This repository is currently documentation-first. The main source of truth is [VitreCSS.md](/C:/dev/appurist/vitre-css/VitreCSS.md), which defines the Vitre design goals, CSS token ideas, and planned styling work.
+This repository is currently documentation-first. The main source of truth is [VitreCSS.md](/C:/dev/vitre-ui/vitre-css/VitreCSS.md), which defines the Vitre design goals, CSS token ideas, and planned styling work.
 
 Keep new files grouped by purpose as the project grows:
 - `VitreCSS.md` for product and styling documentation

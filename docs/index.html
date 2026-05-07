@@ -43,7 +43,7 @@
           <li>Typography: headings, paragraphs, links, lists, blockquotes, marks, edits, metadata, and rules</li>
           <li>Forms: labels, buttons, inputs, textareas, selects, outputs, fieldsets, radios, and checkboxes</li>
           <li>Data: tables, captions, code, keyboard hints, progress, and meters</li>
-          <li>Structure: article cards, nested asides, definition lists, and role-based banners</li>
+          <li>Structure: article cards, nested asides, definition lists, and role-based alerts</li>
           <li>Interactive and embedded elements: details, summary, dialog, audio, objects, and dialog-like regions</li>
         </ul>
 
@@ -95,17 +95,15 @@
         <pre><code>:root {
   --vitre-hue: 168;
   --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
-  --vitre-font-weight: 300;
+  --vitre-font-weight: 400;
   --vitre-radius: 0.5rem;
   --vitre-measure: 80ch;
   --vitre-button-bg-angle: 180deg;
 }</code></pre>
 
         <p>
-          Button gradients are controlled by variables and can be disabled by
-          setting <code>--vitre-button-bg-image</code> to <code>none</code>, or
-          on one button with <code>data-vitre-gradient="none"</code>. Hover glow
-          can be disabled on one button with <code>data-vitre-glow="none"</code>.
+          Button gradients are controlled by variables and common button treatments
+          are available with <code>data-variant</code>.
         </p>
 
         <pre><code>:root {
@@ -114,8 +112,10 @@
   --vitre-button-bg-image: none;
 }
 
-&lt;button type="button" data-vitre-gradient="none"&gt;Flat button&lt;/button&gt;
-&lt;button type="button" data-vitre-glow="none"&gt;No glow&lt;/button&gt;</code></pre>
+&lt;button type="button" data-variant="flat"&gt;Flat button&lt;/button&gt;
+&lt;button type="button" data-variant="outline"&gt;Outline button&lt;/button&gt;
+&lt;button type="button" data-variant="ghost"&gt;Ghost button&lt;/button&gt;
+&lt;button type="button" data-variant="plain"&gt;Plain button&lt;/button&gt;</code></pre>
 
         <table>
           <thead>
@@ -128,27 +128,27 @@
           <tbody>
             <tr>
               <td><code>--vitre-primary</code></td>
-              <td><mark data-vitre-token="primary"></mark></td>
+              <td><mark data-token="primary"></mark></td>
               <td>Links, focus, and primary actions</td>
             </tr>
             <tr>
               <td><code>--vitre-bg</code></td>
-              <td><mark data-vitre-token="bg"></mark></td>
+              <td><mark data-token="bg"></mark></td>
               <td>Page background</td>
             </tr>
             <tr>
               <td><code>--vitre-surface</code></td>
-              <td><mark data-vitre-token="surface"></mark></td>
+              <td><mark data-token="surface"></mark></td>
               <td>Panels and elevated surfaces</td>
             </tr>
             <tr>
               <td><code>--vitre-text</code></td>
-              <td><mark data-vitre-token="text"></mark></td>
+              <td><mark data-token="text"></mark></td>
               <td>Primary text</td>
             </tr>
             <tr>
               <td><code>--vitre-muted</code></td>
-              <td><mark data-vitre-token="muted"></mark></td>
+              <td><mark data-token="muted"></mark></td>
               <td>Secondary text</td>
             </tr>
             <tr>
@@ -164,7 +164,7 @@
             <tr>
               <td><code>--vitre-button-bg-image</code></td>
               <td></td>
-              <td>Button background gradient; set to <code>none</code> for flat buttons</td>
+              <td>Button background gradient; used by the default and flat button treatments</td>
             </tr>
             <tr>
               <td><code>--vitre-button-hover-shadow</code></td>
@@ -178,6 +178,15 @@
             </tr>
           </tbody>
         </table>
+
+        <p>
+          Role-based alerts use semantic ARIA roles and get matching borders, backgrounds,
+          and left accents.
+        </p>
+
+        <pre><code>&lt;div role="status"&gt;Saved successfully.&lt;/div&gt;
+&lt;div role="note"&gt;Review this note.&lt;/div&gt;
+&lt;div role="alert"&gt;Action required.&lt;/div&gt;</code></pre>
       </section>
 
       <section id="themes">

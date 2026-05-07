@@ -65,37 +65,37 @@
           <tbody>
             <tr>
               <td><code>--vitre-primary</code></td>
-              <td><mark data-vitre-token="primary"></mark></td>
+              <td><mark data-token="primary"></mark></td>
               <td>Links, focus, primary actions</td>
             </tr>
             <tr>
               <td><code>--vitre-bg</code></td>
-              <td><mark data-vitre-token="bg"></mark></td>
+              <td><mark data-token="bg"></mark></td>
               <td>Page background</td>
             </tr>
             <tr>
               <td><code>--vitre-surface</code></td>
-              <td><mark data-vitre-token="surface"></mark></td>
+              <td><mark data-token="surface"></mark></td>
               <td>Glass panels and elevated surfaces</td>
             </tr>
             <tr>
               <td><code>--vitre-text</code></td>
-              <td><mark data-vitre-token="text"></mark></td>
+              <td><mark data-token="text"></mark></td>
               <td>Primary text</td>
             </tr>
             <tr>
               <td><code>--vitre-muted</code></td>
-              <td><mark data-vitre-token="muted"></mark></td>
+              <td><mark data-token="muted"></mark></td>
               <td>Body copy and secondary text</td>
             </tr>
             <tr>
               <td><code>--vitre-border</code></td>
-              <td><mark data-vitre-token="border"></mark></td>
+              <td><mark data-token="border"></mark></td>
               <td>Control and table borders</td>
             </tr>
             <tr>
               <td><code>--vitre-code-bg</code></td>
-              <td><mark data-vitre-token="code-bg"></mark></td>
+              <td><mark data-token="code-bg"></mark></td>
               <td>Inline and block code backgrounds</td>
             </tr>
           </tbody>
@@ -310,22 +310,25 @@
           </p>
         </form>
 
-        <h3>Button Variables</h3>
+        <h3>Button Variants</h3>
         <p>
-          Default buttons use a tokenized gradient, hover border, glow, shadow, and scale.
-          The second button disables only the background image through a CSS variable.
+          Default buttons use the solid variant. Buttons also support flat, outline, ghost, and plain variants.
         </p>
         <p>
-          <button type="button">Gradient button</button>
-          <button type="button" data-vitre-gradient="none">Flat button</button>
-          <button type="button" data-vitre-glow="none">No glow</button>
+          <button type="button">Solid button</button>
+          <button type="button" data-variant="flat">Flat button</button>
+          <button type="button" data-variant="outline">Outline button</button>
+          <button type="button" data-variant="ghost">Ghost button</button>
+          <button type="button" data-variant="plain">Plain button</button>
         </p>
         <pre><code>:root {
   --vitre-button-bg-angle: 180deg;
 }
 
-&lt;button type="button" data-vitre-gradient="none"&gt;Flat button&lt;/button&gt;
-&lt;button type="button" data-vitre-glow="none"&gt;No glow&lt;/button&gt;</code></pre>
+&lt;button type="button" data-variant="flat"&gt;Flat button&lt;/button&gt;
+&lt;button type="button" data-variant="outline"&gt;Outline button&lt;/button&gt;
+&lt;button type="button" data-variant="ghost"&gt;Ghost button&lt;/button&gt;
+&lt;button type="button" data-variant="plain"&gt;Plain button&lt;/button&gt;</code></pre>
       </section>
 
       <section id="data">

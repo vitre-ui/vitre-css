@@ -6,8 +6,8 @@ A great looking web page without any `class="..."` or `style="..."` on your HTML
 
 Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. It honors semantic tags without polluting markup, so ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
 
-# Related
-Work has begin on a related but opposite project, [vitre-js](https://www.npmjs.com/package/vitre-js) which is the other half: styleless interactivity for interactive components. Currently, it exists more as a proof-of-concept, but the idea is to optionally use either or both together.
+## Related
+Work has begun on a related but opposite project, [vitre-js](https://www.npmjs.com/package/vitre-js): styleless interactivity for semantic components. Use either package on its own, or pair them when you want Vitre styling and Vitre behavior together.
 
 ## Links
 
@@ -89,7 +89,7 @@ In `custom.css`, start with variable overrides:
 :root {
   --vitre-hue: 168;
   --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
-  --vitre-font-weight: 300;
+  --vitre-font-weight: 400;
   --vitre-radius: 0.5rem;
   --vitre-measure: 80ch;
   --vitre-button-height: 40px;
@@ -99,7 +99,7 @@ In `custom.css`, start with variable overrides:
 
 Useful tokens include colors, spacing, typography, surfaces, borders, focus rings, forms, tables, shadows, and code blocks. See `vitre.css` for the full variable surface.
 
-Buttons expose background and hover variables. To keep a flat button while preserving the base color, disable only the gradient image:
+Buttons expose background and hover variables. Use `data-variant` for common button treatments:
 
 ```css
 :root {
@@ -107,16 +107,25 @@ Buttons expose background and hover variables. To keep a flat button while prese
 }
 ```
 
-For a single flat button, use the Vitre attribute instead of adding a class:
+For a single flat button, use the variant attribute instead of adding a class:
 
 ```html
-<button type="button" data-vitre-gradient="none">Flat button</button>
+<button type="button" data-variant="flat">Flat button</button>
 ```
 
-To disable only the hover glow on a single button while keeping the ordinary hover shadow:
+Other supported variants are `outline`, `ghost`, and `plain`:
 
 ```html
-<button type="button" data-vitre-glow="none">No glow</button>
+<button type="button" data-variant="outline">Outline button</button>
+<button type="button" data-variant="ghost">Ghost button</button>
+<button type="button" data-variant="plain">Plain button</button>
+```
+
+Token swatches can use `data-token`:
+
+```html
+<mark data-token="primary"></mark>
+<mark data-token="surface"></mark>
 ```
 
 If a selector does not expose the exact customization you need, override the element rule in your stylesheet after Vitre:
@@ -136,6 +145,7 @@ Prefer variables when they exist. If you find yourself repeatedly overriding the
 - Code: `code`, `pre`, `kbd`, and `samp`
 - Forms: labels, buttons, inputs, textareas, selects, fieldsets, checkboxes, radios, ranges, and color inputs
 - Data and disclosure: tables, `details`, `summary`, `dialog`, `progress`, and `meter`
+- Role patterns: `[role="alert"]`, `[role="status"]`, `[role="note"]`, `[role="dialog"]`, and grouped form controls
 - Media: images, videos, SVGs, canvas, and iframes
 
 ## Browser Support

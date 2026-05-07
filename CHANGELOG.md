@@ -1,13 +1,16 @@
 # Changelog
 
-## 1.3.0 - 2026-05-07
+## 1.4.0 - 2026-05-07
 
 - Added default flex wrapping and tokenized spacing for `nav` elements with `--vitre-nav-gap`.
 - Kept nav alignment neutral by avoiding automatic centering based on accessibility attributes.
 - Strengthened button hover affordance with tokenized glow, border, shadow, and scale effects.
-- Added stronger button background gradient variables so gradients can be customized or disabled with `--vitre-button-bg-image` or `data-vitre-gradient="none"`.
-- Added `data-vitre-glow="none"` and split button hover shadow variables so per-button glow can be disabled without removing the drop shadow.
-- Added `--vitre-font-weight` and a lighter cross-platform sans stack using Segoe UI Semilight on Windows with lighter native fallbacks on macOS and Linux.
+- Added `data-variant` button treatments for `flat`, `outline`, `ghost`, and `plain`.
+- Replaced branded Vitre data attributes with shorter `data-*` attributes, including `data-token` for token swatches.
+- Split button hover shadow variables so variant styles can disable glow without removing other button behavior.
+- Added `--vitre-font-weight` and a cross-platform system sans stack.
+- Restored the default body font weight to 400 and removed Segoe UI Semilight from the default stack to avoid slanted text rendering on Windows.
+- Made role-based alert/status/note boxes block-level, reduced their vertical padding from 16px to 8px, and added role-colored left accents.
 
 ## 1.2.0 - 2026-05-06
 

@@ -43,7 +43,7 @@
           <li>Typography: headings, paragraphs, links, lists, blockquotes, marks, edits, metadata, and rules</li>
           <li>Forms: labels, buttons, inputs, textareas, selects, outputs, fieldsets, radios, and checkboxes</li>
           <li>Data: tables, captions, code, keyboard hints, progress, and meters</li>
-          <li>Structure: article cards, nested asides, definition lists, and role-based alerts</li>
+          <li>Structure: article cards, nested asides, definition lists, and data-kind alerts</li>
           <li>Interactive and embedded elements: details, summary, dialog, audio, objects, and dialog-like regions</li>
         </ul>
 
@@ -180,13 +180,13 @@
         </table>
 
         <p>
-          Role-based alerts use semantic ARIA roles and get matching borders, backgrounds,
-          and left accents.
+          Alerts use <code>data-kind="alert"</code> and named <code>data-color</code>
+          values for matching borders, backgrounds, and left accents.
         </p>
 
-        <pre><code>&lt;div role="status"&gt;Saved successfully.&lt;/div&gt;
-&lt;div role="note"&gt;Review this note.&lt;/div&gt;
-&lt;div role="alert"&gt;Action required.&lt;/div&gt;</code></pre>
+        <pre><code>&lt;div data-kind="alert" data-color="success" role="status"&gt;Saved successfully.&lt;/div&gt;
+&lt;div data-kind="alert" data-color="info"&gt;Review this note.&lt;/div&gt;
+&lt;div data-kind="alert" data-color="error" role="alert"&gt;Action required.&lt;/div&gt;</code></pre>
       </section>
 
       <section id="themes">

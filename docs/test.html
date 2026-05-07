@@ -218,9 +218,10 @@
           <dd>Supplementary content that should stand apart from the main flow.</dd>
         </dl>
 
-        <div role="status">Your changes have been saved successfully.</div>
-        <div role="note">This note highlights contextual information.</div>
-        <div role="alert">This alert needs attention before continuing.</div>
+        <div data-kind="alert" data-color="success" role="status">Your changes have been saved successfully.</div>
+        <div data-kind="alert" data-color="info">This note highlights contextual information.</div>
+        <div data-kind="alert" data-color="warning">This warning should be reviewed before continuing.</div>
+        <div data-kind="alert" data-color="error" role="alert">This alert needs attention before continuing.</div>
       </section>
 
       <section id="forms">

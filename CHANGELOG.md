@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.0 - 2026-05-07
+
+- Replaced role-based alert styling with `[data-kind="alert"]` and named `data-color` values.
+- Renamed the error color token from `--vitre-danger` to `--vitre-error`.
+
 ## 1.4.0 - 2026-05-07
 
 - Added default flex wrapping and tokenized spacing for `nav` elements with `--vitre-nav-gap`.
@@ -10,7 +15,7 @@
 - Split button hover shadow variables so variant styles can disable glow without removing other button behavior.
 - Added `--vitre-font-weight` and a cross-platform system sans stack.
 - Restored the default body font weight to 400 and removed Segoe UI Semilight from the default stack to avoid slanted text rendering on Windows.
-- Made role-based alert/status/note boxes block-level, reduced their vertical padding from 16px to 8px, and added role-colored left accents.
+- Made alert boxes block-level, reduced their vertical padding from 16px to 8px, and added color-aligned left accents.
 
 ## 1.2.0 - 2026-05-06
 

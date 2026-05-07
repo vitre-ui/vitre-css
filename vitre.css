@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.4.0
+ * Vitre CSS v1.5.0
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -86,19 +86,18 @@
     --vitre-hue: 214;
     --vitre-primary: hsl(var(--vitre-hue) 88% 56%);
     --vitre-primary-ink: hsl(0 0% 100%);
-    --vitre-danger: hsl(356 72% 52%);
+    --vitre-info: hsl(199 89% 48%);
+    --vitre-error: hsl(356 72% 52%);
     --vitre-success: hsl(152 58% 38%);
     --vitre-warning: hsl(38 92% 48%);
     --vitre-inserted: var(--vitre-success);
     --vitre-inserted-bg: color-mix(in oklab, var(--vitre-success), transparent 86%);
-    --vitre-deleted: var(--vitre-danger);
-    --vitre-deleted-bg: color-mix(in oklab, var(--vitre-danger), transparent 88%);
-    --vitre-alert: var(--vitre-danger);
-    --vitre-alert-bg: color-mix(in oklab, var(--vitre-danger), transparent 88%);
-    --vitre-status: var(--vitre-success);
-    --vitre-status-bg: color-mix(in oklab, var(--vitre-success), transparent 88%);
-    --vitre-note: var(--vitre-warning);
-    --vitre-note-bg: color-mix(in oklab, var(--vitre-warning), transparent 86%);
+    --vitre-deleted: var(--vitre-error);
+    --vitre-deleted-bg: color-mix(in oklab, var(--vitre-error), transparent 88%);
+    --vitre-info-bg: color-mix(in oklab, var(--vitre-info), transparent 88%);
+    --vitre-error-bg: color-mix(in oklab, var(--vitre-error), transparent 88%);
+    --vitre-success-bg: color-mix(in oklab, var(--vitre-success), transparent 88%);
+    --vitre-warning-bg: color-mix(in oklab, var(--vitre-warning), transparent 86%);
     --vitre-busy-color: currentColor;
     --vitre-busy-size: 1em;
     --vitre-busy-border-width: 2px;
@@ -113,7 +112,7 @@
     --vitre-abbr-decoration: color-mix(in oklab, var(--vitre-primary), transparent 35%);
     --vitre-kbd-shadow: color-mix(in oklab, var(--vitre-border), transparent 20%);
     --vitre-code-bg-end: color-mix(in oklab, var(--vitre-code-bg), black 3%);
-    --vitre-invalid-focus: color-mix(in oklab, var(--vitre-danger), transparent 78%);
+    --vitre-invalid-focus: color-mix(in oklab, var(--vitre-error), transparent 78%);
     --vitre-valid-border: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
     --vitre-button-border: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
     --vitre-button-bg: var(--vitre-primary);
@@ -129,9 +128,9 @@
     --vitre-busy-border: color-mix(in oklab, var(--vitre-busy-color), transparent 70%);
     --vitre-table-foot-bg: color-mix(in oklab, var(--vitre-surface-soft), var(--vitre-primary) 4%);
     --vitre-table-row-hover: color-mix(in oklab, var(--vitre-primary), transparent 94%);
-    --vitre-alert-border: color-mix(in oklab, var(--vitre-alert), var(--vitre-border) 45%);
-    --vitre-status-border: color-mix(in oklab, var(--vitre-status), var(--vitre-border) 45%);
-    --vitre-note-border: color-mix(in oklab, var(--vitre-note), var(--vitre-border) 45%);
+    --vitre-alert-color: var(--vitre-info);
+    --vitre-alert-bg: var(--vitre-info-bg);
+    --vitre-alert-border: color-mix(in oklab, var(--vitre-alert-color), var(--vitre-border) 45%);
     --vitre-alert-accent-width: 0.32rem;
 
     --vitre-control-bg: var(--vitre-surface-strong);
@@ -253,11 +252,11 @@
     display: flow-root;
   }
 
-  :where(main, article, aside, nav, search, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"], [role="alert"], [role="status"], [role="note"]) {
+  :where(main, article, aside, nav, search, form, fieldset, blockquote, table, pre, details, dialog, [role="dialog"], [data-kind="alert"]) {
     margin-block: var(--vitre-space-5);
   }
 
-  :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details, [role="alert"], [role="status"], [role="note"]) + :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details, [role="alert"], [role="status"], [role="note"]) {
+  :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details, [data-kind="alert"]) + :where(h1, h2, h3, h4, h5, h6, hgroup, p, ul, ol, menu, dl, figure, blockquote, pre, table, form, search, details, [data-kind="alert"]) {
     margin-block-start: var(--vitre-space-4);
   }
 
@@ -575,7 +574,7 @@
   }
 
   :where(input, textarea, select):user-invalid {
-    border-color: var(--vitre-danger);
+    border-color: var(--vitre-error);
     box-shadow: 0 0 0 3px var(--vitre-invalid-focus);
   }
 
@@ -963,31 +962,41 @@
     background: var(--vitre-surface-soft);
   }
 
-  :where([role="alert"], [role="status"], [role="note"]) {
+  [data-kind="alert"] {
     display: block;
     border: var(--vitre-border-width) solid var(--vitre-border);
+    border-color: var(--vitre-alert-border);
     border-inline-start-width: var(--vitre-alert-accent-width);
+    border-inline-start-color: var(--vitre-alert-color);
     border-radius: var(--vitre-radius-lg);
     padding: var(--vitre-space-2) var(--vitre-space-4);
     color: var(--vitre-text);
-  }
-
-  [role="alert"] {
-    border-color: var(--vitre-alert-border);
-    border-inline-start-color: var(--vitre-alert);
     background: var(--vitre-alert-bg);
   }
 
-  [role="status"] {
-    border-color: var(--vitre-status-border);
-    border-inline-start-color: var(--vitre-status);
-    background: var(--vitre-status-bg);
+  [data-kind="alert"][data-color="primary"] {
+    --vitre-alert-color: var(--vitre-primary);
+    --vitre-alert-bg: color-mix(in oklab, var(--vitre-primary), transparent 88%);
   }
 
-  [role="note"] {
-    border-color: var(--vitre-note-border);
-    border-inline-start-color: var(--vitre-note);
-    background: var(--vitre-note-bg);
+  [data-kind="alert"][data-color="info"] {
+    --vitre-alert-color: var(--vitre-info);
+    --vitre-alert-bg: var(--vitre-info-bg);
+  }
+
+  [data-kind="alert"][data-color="success"] {
+    --vitre-alert-color: var(--vitre-success);
+    --vitre-alert-bg: var(--vitre-success-bg);
+  }
+
+  [data-kind="alert"][data-color="warning"] {
+    --vitre-alert-color: var(--vitre-warning);
+    --vitre-alert-bg: var(--vitre-warning-bg);
+  }
+
+  [data-kind="alert"][data-color="error"] {
+    --vitre-alert-color: var(--vitre-error);
+    --vitre-alert-bg: var(--vitre-error-bg);
   }
 
   @media (prefers-reduced-motion: reduce) {

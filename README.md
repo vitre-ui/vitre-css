@@ -145,7 +145,7 @@ Prefer variables when they exist. If you find yourself repeatedly overriding the
 - Code: `code`, `pre`, `kbd`, and `samp`
 - Forms: labels, buttons, inputs, textareas, selects, fieldsets, checkboxes, radios, ranges, and color inputs
 - Data and disclosure: tables, `details`, `summary`, `dialog`, `progress`, and `meter`
-- Role patterns: `[role="alert"]`, `[role="status"]`, `[role="note"]`, `[role="dialog"]`, and grouped form controls
+- Data patterns: `[data-kind="alert"]`, `[data-color="warning"]`, `[role="dialog"]`, and grouped form controls
 - Media: images, videos, SVGs, canvas, and iframes
 
 ## Browser Support

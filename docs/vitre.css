@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.2.0
+ * Vitre CSS v1.3.0
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -56,8 +56,9 @@
   :root {
     color-scheme: light dark;
 
-    --vitre-font-sans: Roboto, "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --vitre-font-sans: "Segoe UI Semilight", -apple-system, BlinkMacSystemFont, "Ubuntu", "Cantarell", "Noto Sans", "Roboto", ui-sans-serif, system-ui, sans-serif;
     --vitre-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --vitre-font-weight: 300;
     --vitre-leading: 1.65;
     --vitre-measure: 72ch;
 
@@ -75,6 +76,7 @@
     --vitre-space-5: 1.5rem;
     --vitre-space-6: 2rem;
     --vitre-space-7: 3rem;
+    --vitre-nav-gap: var(--vitre-space-5);
 
     --vitre-radius-sm: 0.45rem;
     --vitre-radius: 0.75rem;
@@ -114,7 +116,16 @@
     --vitre-invalid-focus: color-mix(in oklab, var(--vitre-danger), transparent 78%);
     --vitre-valid-border: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
     --vitre-button-border: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
-    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 12%);
+    --vitre-button-bg: var(--vitre-primary);
+    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 24%);
+    --vitre-button-bg-end: color-mix(in oklab, var(--vitre-primary), black 8%);
+    --vitre-button-bg-angle: 180deg;
+    --vitre-button-bg-image: linear-gradient(var(--vitre-button-bg-angle), var(--vitre-button-bg-start), var(--vitre-button-bg-end));
+    --vitre-button-hover-border: color-mix(in oklab, var(--vitre-primary), white 26%);
+    --vitre-button-hover-glow: color-mix(in oklab, var(--vitre-primary), transparent 70%);
+    --vitre-button-hover-glow-shadow: 0 6px 20px var(--vitre-button-hover-glow);
+    --vitre-button-hover-drop-shadow: 0 3px 10px hsl(0 0% 0% / 0.16);
+    --vitre-button-hover-shadow: var(--vitre-button-hover-glow-shadow), var(--vitre-button-hover-drop-shadow);
     --vitre-busy-border: color-mix(in oklab, var(--vitre-busy-color), transparent 70%);
     --vitre-table-foot-bg: color-mix(in oklab, var(--vitre-surface-soft), var(--vitre-primary) 4%);
     --vitre-table-row-hover: color-mix(in oklab, var(--vitre-primary), transparent 94%);
@@ -218,6 +229,7 @@
     color: var(--vitre-text);
     font-family: var(--vitre-font-sans);
     font-size: var(--vitre-step-0);
+    font-weight: var(--vitre-font-weight);
     line-height: var(--vitre-leading);
     text-rendering: optimizeLegibility;
   }
@@ -251,6 +263,13 @@
   :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
     outline: 2px solid transparent;
     box-shadow: var(--vitre-focus);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--vitre-nav-gap);
   }
 
   :target {
@@ -581,8 +600,8 @@
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    background:
-      linear-gradient(180deg, var(--vitre-button-bg-start), var(--vitre-primary));
+    background-color: var(--vitre-button-bg);
+    background-image: var(--vitre-button-bg-image);
     cursor: pointer;
     transition:
       transform 140ms ease,
@@ -591,15 +610,25 @@
       background-color 140ms ease;
   }
 
-  button:hover,
-  :where(input[type="button"], input[type="reset"], input[type="submit"]):hover {
-    transform: translateY(-1px);
-    box-shadow: var(--vitre-shadow);
+  button:not(:disabled):hover,
+  :where(input[type="button"], input[type="reset"], input[type="submit"]):not(:disabled):hover {
+    border-color: var(--vitre-button-hover-border);
+    transform: translateY(-2px) scale(1.035);
+    box-shadow: var(--vitre-button-hover-shadow);
   }
 
-  button:active,
-  :where(input[type="button"], input[type="reset"], input[type="submit"]):active {
-    transform: translateY(0);
+  button:not(:disabled):active,
+  :where(input[type="button"], input[type="reset"], input[type="submit"]):not(:disabled):active {
+    transform: translateY(0) scale(1.01);
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-vitre-gradient="none"] {
+    background-image: none;
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-vitre-glow="none"] {
+    --vitre-button-hover-glow-shadow: 0 0 0 hsl(0 0% 0% / 0);
+    --vitre-button-hover-shadow: var(--vitre-button-hover-drop-shadow);
   }
 
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[aria-busy="true"] {

@@ -6,11 +6,16 @@ A great looking web page without any `class="..."` or `style="..."` on your HTML
 
 Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. It honors semantic tags without polluting markup, so ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
 
+# Related
+Work has begin on a related but opposite project, [vitre-js](https://www.npmjs.com/package/vitre-js) which is the other half: styleless interactivity for interactive components. Currently, it exists more as a proof-of-concept, but the idea is to optionally use either or both together.
+
 ## Links
 
-- npmjs.org: https://www.npmjs.com/package/vitre-css
-- GitHub repo: https://github.com/appurist/vitre-css
 - GitHub docs: https://appurist.github.io/vitre-css/
+- GitHub repo: https://github.com/appurist/vitre-css
+- npmjs.org: https://www.npmjs.com/package/vitre-css
+- vitre-js: https://www.npmjs.com/package/vitre-js
+
 
 ## Install
 
@@ -84,13 +89,35 @@ In `custom.css`, start with variable overrides:
 :root {
   --vitre-hue: 168;
   --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
+  --vitre-font-weight: 300;
   --vitre-radius: 0.5rem;
   --vitre-measure: 80ch;
   --vitre-button-height: 40px;
+  --vitre-button-bg-angle: 180deg;
 }
 ```
 
 Useful tokens include colors, spacing, typography, surfaces, borders, focus rings, forms, tables, shadows, and code blocks. See `vitre.css` for the full variable surface.
+
+Buttons expose background and hover variables. To keep a flat button while preserving the base color, disable only the gradient image:
+
+```css
+:root {
+  --vitre-button-bg-image: none;
+}
+```
+
+For a single flat button, use the Vitre attribute instead of adding a class:
+
+```html
+<button type="button" data-vitre-gradient="none">Flat button</button>
+```
+
+To disable only the hover glow on a single button while keeping the ordinary hover shadow:
+
+```html
+<button type="button" data-vitre-glow="none">No glow</button>
+```
 
 If a selector does not expose the exact customization you need, override the element rule in your stylesheet after Vitre:
 
@@ -114,4 +141,3 @@ Prefer variables when they exist. If you find yourself repeatedly overriding the
 ## Browser Support
 
 Vitre targets modern browsers and uses current CSS features including cascade layers, `color-mix()`, `:where()`, `:has()`, logical properties, `clamp()`, and `backdrop-filter`. It favors a small, expressive stylesheet over legacy fallbacks.
-

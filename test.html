@@ -309,6 +309,23 @@
             <button type="button" aria-busy="true">Loading</button>
           </p>
         </form>
+
+        <h3>Button Variables</h3>
+        <p>
+          Default buttons use a tokenized gradient, hover border, glow, shadow, and scale.
+          The second button disables only the background image through a CSS variable.
+        </p>
+        <p>
+          <button type="button">Gradient button</button>
+          <button type="button" data-vitre-gradient="none">Flat button</button>
+          <button type="button" data-vitre-glow="none">No glow</button>
+        </p>
+        <pre><code>:root {
+  --vitre-button-bg-angle: 180deg;
+}
+
+&lt;button type="button" data-vitre-gradient="none"&gt;Flat button&lt;/button&gt;
+&lt;button type="button" data-vitre-glow="none"&gt;No glow&lt;/button&gt;</code></pre>
       </section>
 
       <section id="data">
@@ -356,12 +373,12 @@
 
         <h3>Embedded Media</h3>
         <figure>
-          <audio controls src="media/september.mp3" width="348"></audio>
+          <audio controls src="docs/media/september.mp3" width="348"></audio>
           <figcaption>Audio example using a local MP3 asset.</figcaption>
         </figure>
 
         <figure>
-          <video controls src="media/drowning-in-life-clip.mp4" width="348" height="348"></video>
+          <video controls src="docs/media/drowning-in-life-clip.mp4" width="348" height="348"></video>
           <figcaption>Video example using a local MP4 asset.</figcaption>
         </figure>
 

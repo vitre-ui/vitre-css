@@ -95,9 +95,27 @@
         <pre><code>:root {
   --vitre-hue: 168;
   --vitre-primary: hsl(var(--vitre-hue) 76% 42%);
+  --vitre-font-weight: 300;
   --vitre-radius: 0.5rem;
   --vitre-measure: 80ch;
+  --vitre-button-bg-angle: 180deg;
 }</code></pre>
+
+        <p>
+          Button gradients are controlled by variables and can be disabled by
+          setting <code>--vitre-button-bg-image</code> to <code>none</code>, or
+          on one button with <code>data-vitre-gradient="none"</code>. Hover glow
+          can be disabled on one button with <code>data-vitre-glow="none"</code>.
+        </p>
+
+        <pre><code>:root {
+  --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 24%);
+  --vitre-button-bg-end: color-mix(in oklab, var(--vitre-primary), black 8%);
+  --vitre-button-bg-image: none;
+}
+
+&lt;button type="button" data-vitre-gradient="none"&gt;Flat button&lt;/button&gt;
+&lt;button type="button" data-vitre-glow="none"&gt;No glow&lt;/button&gt;</code></pre>
 
         <table>
           <thead>
@@ -132,6 +150,31 @@
               <td><code>--vitre-muted</code></td>
               <td><mark data-vitre-token="muted"></mark></td>
               <td>Secondary text</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-font-weight</code></td>
+              <td></td>
+              <td>Base document text weight</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-nav-gap</code></td>
+              <td></td>
+              <td>Default spacing between items in navigation regions</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-button-bg-image</code></td>
+              <td></td>
+              <td>Button background gradient; set to <code>none</code> for flat buttons</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-button-hover-shadow</code></td>
+              <td></td>
+              <td>Button hover glow and drop shadow</td>
+            </tr>
+            <tr>
+              <td><code>--vitre-button-hover-glow-shadow</code></td>
+              <td></td>
+              <td>Glow portion of the button hover shadow</td>
             </tr>
           </tbody>
         </table>

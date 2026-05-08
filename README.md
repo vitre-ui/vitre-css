@@ -34,9 +34,10 @@ npm install vitre-css
 Use a CDN:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/vitre-css@latest/vitre.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vitre-css@latest/vitre.css">
+<link rel="stylesheet" href="https://unpkg.com/vitre-css/vitre.css">
 ```
+
+For CDN usage, prefer the unversioned unpkg URL. It resolves to the latest published npm version quickly while keeping copy/paste usage simple.
 
 ## Documentation
 

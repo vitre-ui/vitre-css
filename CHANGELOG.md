@@ -1,8 +1,10 @@
 # Changelog
 
-## 1.5.1 - 2026-05-07
+## 1.5.2 - 2026-05-07
 
 - Updated repository and documentation links for the move to the `vitre-ui` GitHub organization.
+- Reserved dismissible alert close-button layout before Vitre JS enhancement to avoid first-render layout jumps.
+- Kept inline code, keyboard, and sample tokens on one line so package names and commands do not wrap awkwardly in tables.
 
 ## 1.5.0 - 2026-05-07
 

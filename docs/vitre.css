@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.5.1
+ * Vitre CSS v1.5.2
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -486,6 +486,7 @@
     color: var(--vitre-code-text);
     font-family: var(--vitre-font-mono);
     font-size: 0.9em;
+    white-space: nowrap;
     background: var(--vitre-code-bg);
   }
 
@@ -972,6 +973,30 @@
     padding: var(--vitre-space-2) var(--vitre-space-4);
     color: var(--vitre-text);
     background: var(--vitre-alert-bg);
+  }
+
+  [data-kind="alert"][dismiss],
+  [data-kind="alert"][data-v-enhanced="true"]:has(> [data-v-close]) {
+    display: flex;
+    align-items: center;
+    gap: var(--vitre-space-3);
+  }
+
+  [data-kind="alert"] > [data-v-content] {
+    flex: 1 1 auto;
+  }
+
+  [data-kind="alert"][dismiss]::after {
+    content: "";
+    display: block;
+    flex: 0 0 auto;
+    inline-size: 2rem;
+    block-size: 2rem;
+    margin-inline-start: auto;
+  }
+
+  [data-kind="alert"][data-v-enhanced="true"]::after {
+    display: none;
   }
 
   [data-kind="alert"][data-color="primary"] {

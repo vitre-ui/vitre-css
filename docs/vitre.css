@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.5.2
+ * Vitre CSS v1.5.3
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -84,7 +84,7 @@
     --vitre-border-width: 1px;
 
     --vitre-hue: 214;
-    --vitre-primary: hsl(var(--vitre-hue) 88% 56%);
+    --vitre-primary: hsl(var(--vitre-hue) 88% 46%);
     --vitre-primary-ink: hsl(0 0% 100%);
     --vitre-info: hsl(199 89% 48%);
     --vitre-error: hsl(356 72% 52%);
@@ -116,7 +116,7 @@
     --vitre-valid-border: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
     --vitre-button-border: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
     --vitre-button-bg: var(--vitre-primary);
-    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 24%);
+    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 8%);
     --vitre-button-bg-end: color-mix(in oklab, var(--vitre-primary), black 8%);
     --vitre-button-bg-angle: 180deg;
     --vitre-button-bg-image: linear-gradient(var(--vitre-button-bg-angle), var(--vitre-button-bg-start), var(--vitre-button-bg-end));

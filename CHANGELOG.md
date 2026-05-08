@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.3 - 2026-05-07
+
+- Darkened the default primary color and reduced the default button highlight so white button text meets contrast requirements more reliably.
+
 ## 1.5.2 - 2026-05-07
 
 - Updated repository and documentation links for the move to the `vitre-ui` GitHub organization.

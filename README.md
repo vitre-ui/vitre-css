@@ -34,8 +34,8 @@ npm install vitre-css
 Use a CDN:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/vitre-css/vitre.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vitre-css/vitre.css">
+<link rel="stylesheet" href="https://unpkg.com/vitre-css@latest/vitre.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vitre-css@latest/vitre.css">
 ```
 
 ## Documentation

@@ -1,7 +1,7 @@
 {
   "name": "vitre-css",
-  "version": "1.5.3",
-  "description": "Classless CSS with a high-end glass finish for semantic HTML.",
+  "version": "1.5.4",
+  "description": "Class-free and style-free web with a high-end glass finish for semantic HTML.",
   "license": "MIT",
   "homepage": "https://vitre-ui.github.io/vitre-css/",
   "repository": {
@@ -17,6 +17,9 @@
   "keywords": [
     "css",
     "classless",
+    "class-free",
+    "styleless",
+    "style-free",
     "semantic-html",
     "stylesheet",
     "theme",

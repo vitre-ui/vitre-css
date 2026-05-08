@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.5.7
+ * Vitre CSS v1.5.8
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -122,14 +122,7 @@
     --vitre-valid-border: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
     --vitre-button-color: var(--vitre-primary);
     --vitre-button-ink: var(--vitre-primary-ink);
-    --vitre-button-border: color-mix(in oklab, var(--vitre-button-color), var(--vitre-border) 45%);
-    --vitre-button-bg: var(--vitre-button-color);
-    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-button-color), white 8%);
-    --vitre-button-bg-end: color-mix(in oklab, var(--vitre-button-color), black 8%);
     --vitre-button-bg-angle: 180deg;
-    --vitre-button-bg-image: linear-gradient(var(--vitre-button-bg-angle), var(--vitre-button-bg-start), var(--vitre-button-bg-end));
-    --vitre-button-hover-border: color-mix(in oklab, var(--vitre-button-color), white 26%);
-    --vitre-button-hover-glow: color-mix(in oklab, var(--vitre-button-color), transparent 70%);
     --vitre-button-hover-glow-shadow: 0 6px 20px var(--vitre-button-hover-glow);
     --vitre-button-hover-drop-shadow: 0 3px 10px hsl(0 0% 0% / 0.16);
     --vitre-button-hover-shadow: var(--vitre-button-hover-glow-shadow), var(--vitre-button-hover-drop-shadow);
@@ -747,9 +740,16 @@
     gap: var(--vitre-space-2);
     min-block-size: var(--vitre-button-height);
     block-size: var(--vitre-button-height);
+    --vitre-button-border: color-mix(in oklab, var(--vitre-button-color), var(--vitre-border) 45%);
+    --vitre-button-bg: var(--vitre-button-color);
+    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-button-color), white 8%);
+    --vitre-button-bg-end: color-mix(in oklab, var(--vitre-button-color), black 8%);
+    --vitre-button-bg-image: linear-gradient(var(--vitre-button-bg-angle), var(--vitre-button-bg-start), var(--vitre-button-bg-end));
+    --vitre-button-hover-border: color-mix(in oklab, var(--vitre-button-color), white 26%);
+    --vitre-button-hover-glow: color-mix(in oklab, var(--vitre-button-color), transparent 70%);
     border-color: var(--vitre-button-border);
     padding: 0 var(--vitre-button-padding-inline);
-    color: var(--vitre-primary-ink);
+    color: var(--vitre-button-ink);
     font-size: var(--vitre-button-font-size);
     font-weight: 400;
     letter-spacing: 0.04em;

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.8 - 2026-05-08
+
+- Fixed filled `data-color` buttons so derived gradient variables resolve against each button's semantic color.
+
 ## 1.5.7 - 2026-05-08
 
 - Added variable-driven `data-color` support for buttons, button variants, `progress`, and `meter`.

@@ -1,8 +1,17 @@
 # Changelog
 
+## 1.5.6 - 2026-05-08
+
+- Added `vitre-base.css` as an optional first-paint baseline for Vitre theme, typography, background, and page-width styles.
+- Added token swatch support for the full documented color token set.
+- Added `data-width` page container variants for direct body children.
+- Added default full-width sticky styling for a top-level first navigation element, including aligned horizontal padding.
+- Restored preserved whitespace for `pre code` blocks while keeping inline code on one line.
+
 ## 1.5.5 - 2026-05-07
 
 - Updated CDN examples to use unversioned unpkg URLs for faster latest-version resolution.
+- Pointed package documentation links at the central Vitre Docs site and moved the kitchen-sink examples there.
 
 ## 1.5.4 - 2026-05-07
 

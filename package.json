@@ -1,18 +1,15 @@
 {
   "name": "vitre-css",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "Class-free and style-free web with a high-end glass finish for semantic HTML.",
   "license": "MIT",
-  "homepage": "https://vitre-ui.github.io/vitre-css/",
+  "homepage": "https://docs.vitre-ui.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitre-ui/vitre-css.git"
   },
   "bugs": {
     "url": "https://github.com/vitre-ui/vitre-css/issues"
-  },
-  "directories": {
-    "doc": "docs"
   },
   "keywords": [
     "css",
@@ -30,6 +27,7 @@
   "unpkg": "vitre.css",
   "jsdelivr": "vitre.css",
   "files": [
+    "vitre-base.css",
     "vitre.css",
     "README.md",
     "LICENSE",
@@ -37,7 +35,6 @@
   ],
   "scripts": {
     "check": "npm pack --dry-run",
-    "docs": "node -e \"const fs=require('fs'); fs.copyFileSync('vitre.css','docs/vitre.css'); const html=fs.readFileSync('test.html','utf8').replaceAll('docs/media/','media/'); fs.writeFileSync('docs/test.html',html)\"",
     "release": "npm publish --access public"
   }
 }

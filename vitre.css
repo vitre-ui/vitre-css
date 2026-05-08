@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.5.5
+ * Vitre CSS v1.5.6
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -61,6 +61,8 @@
     --vitre-font-weight: 400;
     --vitre-leading: 1.65;
     --vitre-measure: 72ch;
+    --vitre-width-narrow: 72ch;
+    --vitre-width-wide: 72rem;
 
     --vitre-step--1: clamp(0.88rem, 0.85rem + 0.12vw, 0.94rem);
     --vitre-step-0: clamp(1rem, 0.97rem + 0.18vw, 1.1rem);
@@ -240,6 +242,22 @@
     margin-inline: auto;
   }
 
+  body > [data-width="narrow"] {
+    inline-size: min(100% - 2rem, var(--vitre-width-narrow));
+  }
+
+  body > [data-width="wide"] {
+    inline-size: min(100% - 2rem, var(--vitre-width-wide));
+  }
+
+  body > [data-width="wide-80"] {
+    inline-size: min(100% - 2rem, 80vw);
+  }
+
+  body > [data-width="full"] {
+    inline-size: min(100% - 2rem, 100%);
+  }
+
   body > header {
     padding-block-start: var(--vitre-space-6);
   }
@@ -270,6 +288,31 @@
     flex-wrap: wrap;
     align-items: center;
     gap: var(--vitre-nav-gap);
+  }
+
+  body > nav:first-child {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    inline-size: 100%;
+    margin: 0;
+    padding-block: var(--vitre-space-3);
+    padding-inline: max(var(--vitre-space-4), calc((100% - var(--vitre-measure)) / 2 + var(--vitre-space-4)));
+    background: color-mix(in oklab, var(--vitre-bg), transparent 8%);
+    backdrop-filter: blur(var(--vitre-backdrop-blur));
+  }
+
+  body > nav:first-child[data-width="narrow"] {
+    padding-inline: max(var(--vitre-space-4), calc((100% - var(--vitre-width-narrow)) / 2 + var(--vitre-space-4)));
+  }
+
+  body > nav:first-child[data-width="wide"] {
+    padding-inline: max(var(--vitre-space-4), calc((100% - var(--vitre-width-wide)) / 2 + var(--vitre-space-4)));
+  }
+
+  body > nav:first-child[data-width="wide-80"] {
+    padding-inline: max(var(--vitre-space-4), 10vw);
   }
 
   :target {
@@ -430,12 +473,24 @@
     background: var(--vitre-primary);
   }
 
+  mark[data-token="primary-ink"] {
+    background: var(--vitre-primary-ink);
+  }
+
   mark[data-token="bg"] {
     background: var(--vitre-bg);
   }
 
   mark[data-token="surface"] {
     background: var(--vitre-surface);
+  }
+
+  mark[data-token="surface-strong"] {
+    background: var(--vitre-surface-strong);
+  }
+
+  mark[data-token="surface-soft"] {
+    background: var(--vitre-surface-soft);
   }
 
   mark[data-token="text"] {
@@ -446,12 +501,88 @@
     background: var(--vitre-muted);
   }
 
+  mark[data-token="subtle"] {
+    background: var(--vitre-subtle);
+  }
+
   mark[data-token="border"] {
     background: var(--vitre-border);
   }
 
+  mark[data-token="border-strong"] {
+    background: var(--vitre-border-strong);
+  }
+
+  mark[data-token="glass"] {
+    background: var(--vitre-glass);
+  }
+
+  mark[data-token="glass-border"] {
+    background: var(--vitre-glass-border);
+  }
+
+  mark[data-token="mark"] {
+    background: var(--vitre-mark);
+  }
+
+  mark[data-token="info"] {
+    background: var(--vitre-info);
+  }
+
+  mark[data-token="info-bg"] {
+    background: var(--vitre-info-bg);
+  }
+
+  mark[data-token="success"] {
+    background: var(--vitre-success);
+  }
+
+  mark[data-token="success-bg"] {
+    background: var(--vitre-success-bg);
+  }
+
+  mark[data-token="warning"] {
+    background: var(--vitre-warning);
+  }
+
+  mark[data-token="warning-bg"] {
+    background: var(--vitre-warning-bg);
+  }
+
+  mark[data-token="error"] {
+    background: var(--vitre-error);
+  }
+
+  mark[data-token="error-bg"] {
+    background: var(--vitre-error-bg);
+  }
+
   mark[data-token="code-bg"] {
     background: var(--vitre-code-bg);
+  }
+
+  mark[data-token="code-text"] {
+    background: var(--vitre-code-text);
+  }
+
+  mark[data-token="code-border"] {
+    background: var(--vitre-code-border);
+  }
+
+  mark[data-token="inserted"] {
+    background: var(--vitre-inserted);
+  }
+
+  mark[data-token="inserted-bg"] {
+    background: var(--vitre-inserted-bg);
+  }
+
+  mark[data-token="deleted"] {
+    background: var(--vitre-deleted);
+  }
+
+  mark[data-token="deleted-bg"] {
+    background: var(--vitre-deleted-bg);
   }
 
   hr {
@@ -507,6 +638,7 @@
   pre code {
     border: 0;
     padding: 0;
+    white-space: pre;
     background: transparent;
   }
 

@@ -1,17 +1,21 @@
 # Vitre CSS
 
-The transparent style layer. Classless CSS with a high-end finish. Clear. Light. Vitre.
+![Vitre UI](https://vitre-ui.com/images/vitre-ui-dark.webp)
 
-A great looking web page without any `class="..."` or `style="..."` on your HTML elements. Just add `<link rel="stylesheet" href="vitre.css">` (or equivalent) and you're done.
+The transparent style layer. Class-free, style-free web with a high-end finish. Clear. Light. Vitre.
 
-Vitre CSS is a single-file CSS library for making raw semantic HTML look polished by default. It honors semantic tags without polluting markup, so ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
+A great looking web page *without* `class="..."` or `style="..."` on your HTML elements.
+
+Just add `<link rel="stylesheet" href="vitre.css">` (or equivalent) and you're done.
+
+**Vitre CSS** is *single-file* CSS for making raw semantic HTML look polished by default. It honors semantic tags without polluting markup, so ordinary elements such as headings, links, buttons, forms, tables, code blocks, dialogs, and details receive modern light and dark theme styling without required classes.
 
 ## Related
-Work has begun on a related but opposite project, [vitre-js](https://www.npmjs.com/package/vitre-js): styleless interactivity for semantic components. Use either package on its own, or pair them when you want Vitre styling and Vitre behavior together.
+Work has begun on a related but opposite project, [vitre-js](https://www.npmjs.com/package/vitre-js): styleless interactivity for semantic components. Use either package on its own, or pair them when you want Vitre *styling* and Vitre *behavior* together.
 
 ## Links
 
-- GitHub docs: https://vitre-ui.github.io/vitre-css/
+- Documentation: https://docs.vitre-ui.com/
 - GitHub repo: https://github.com/vitre-ui/vitre-css
 - npmjs.org: https://www.npmjs.com/package/vitre-css
 - vitre-js: https://www.npmjs.com/package/vitre-js
@@ -34,14 +38,15 @@ npm install vitre-css
 Use a CDN:
 
 ```html
+<link rel="stylesheet" href="https://unpkg.com/vitre-css/vitre-base.css">
 <link rel="stylesheet" href="https://unpkg.com/vitre-css/vitre.css">
 ```
 
-For CDN usage, prefer the unversioned unpkg URL. It resolves to the latest published npm version quickly while keeping copy/paste usage simple.
+For CDN usage, prefer the unversioned unpkg URLs. They resolve to the latest published npm version quickly while keeping copy/paste usage simple. `vitre-base.css` is optional; include it before `vitre.css` when you want Vitre's first-paint background, typography, theme, and page-width baseline to apply immediately.
 
 ## Documentation
 
-Read the [documentation and examples](https://vitre-ui.github.io/vitre-css/).
+Read the [documentation and examples](https://docs.vitre-ui.com/).
 
 ## Usage
 

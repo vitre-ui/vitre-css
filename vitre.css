@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.5.8
+ * Vitre CSS v1.5.10
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -143,6 +143,7 @@
     --vitre-button-height: 36px;
     --vitre-button-font-size: 14px;
     --vitre-button-padding-inline: 1rem;
+    --vitre-media-aspect: 16 / 9;
 
   }
 }
@@ -1077,6 +1078,10 @@
     border-radius: var(--vitre-radius-lg);
   }
 
+  :where(img, video) {
+    object-fit: contain;
+  }
+
   audio {
     display: block;
     inline-size: 100%;
@@ -1090,7 +1095,19 @@
   }
 
   iframe {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--vitre-media-aspect);
     border: var(--vitre-border-width) solid var(--vitre-border);
+  }
+
+  :where(video, iframe, embed, object)[data-fit="contain"] {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: var(--vitre-media-aspect);
+    object-fit: contain;
   }
 
   ruby {

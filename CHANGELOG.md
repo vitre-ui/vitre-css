@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.10 - 2026-05-08
+
+- Made images and videos default to contained object fitting and made iframes responsive with a default media aspect ratio.
+
+## 1.5.9 - 2026-05-08
+
+- Added `data-fit="contain"` media support for responsive embedded video and framed media.
+
 ## 1.5.8 - 2026-05-08
 
 - Fixed filled `data-color` buttons so derived gradient variables resolve against each button's semantic color.

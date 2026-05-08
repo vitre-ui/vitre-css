@@ -142,6 +142,12 @@ The same `data-color` values are also supported on `progress` and `meter`:
 <meter data-color="warning" min="0" max="100" value="68">68</meter>
 ```
 
+Iframes are responsive by default with a `16 / 9` aspect ratio. Use `data-fit="contain"` on embedded or framed media that should opt into the same stable responsive ratio:
+
+```html
+<iframe data-fit="contain" src="https://www.youtube.com/embed/..."></iframe>
+```
+
 Token swatches can use `data-token`:
 
 ```html

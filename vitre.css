@@ -1,5 +1,5 @@
 /*!
- * Vitre CSS v1.5.6
+ * Vitre CSS v1.5.7
  * Classless CSS with a high-end finish.
  * MIT License
  */
@@ -89,9 +89,13 @@
     --vitre-primary: hsl(var(--vitre-hue) 88% 46%);
     --vitre-primary-ink: hsl(0 0% 100%);
     --vitre-info: hsl(199 89% 48%);
+    --vitre-info-ink: hsl(0 0% 100%);
     --vitre-error: hsl(356 72% 52%);
+    --vitre-error-ink: hsl(0 0% 100%);
     --vitre-success: hsl(152 58% 38%);
+    --vitre-success-ink: hsl(0 0% 100%);
     --vitre-warning: hsl(38 92% 48%);
+    --vitre-warning-ink: hsl(222 38% 14%);
     --vitre-inserted: var(--vitre-success);
     --vitre-inserted-bg: color-mix(in oklab, var(--vitre-success), transparent 86%);
     --vitre-deleted: var(--vitre-error);
@@ -116,20 +120,23 @@
     --vitre-code-bg-end: color-mix(in oklab, var(--vitre-code-bg), black 3%);
     --vitre-invalid-focus: color-mix(in oklab, var(--vitre-error), transparent 78%);
     --vitre-valid-border: color-mix(in oklab, var(--vitre-success), var(--vitre-border) 35%);
-    --vitre-button-border: color-mix(in oklab, var(--vitre-primary), var(--vitre-border) 45%);
-    --vitre-button-bg: var(--vitre-primary);
-    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-primary), white 8%);
-    --vitre-button-bg-end: color-mix(in oklab, var(--vitre-primary), black 8%);
+    --vitre-button-color: var(--vitre-primary);
+    --vitre-button-ink: var(--vitre-primary-ink);
+    --vitre-button-border: color-mix(in oklab, var(--vitre-button-color), var(--vitre-border) 45%);
+    --vitre-button-bg: var(--vitre-button-color);
+    --vitre-button-bg-start: color-mix(in oklab, var(--vitre-button-color), white 8%);
+    --vitre-button-bg-end: color-mix(in oklab, var(--vitre-button-color), black 8%);
     --vitre-button-bg-angle: 180deg;
     --vitre-button-bg-image: linear-gradient(var(--vitre-button-bg-angle), var(--vitre-button-bg-start), var(--vitre-button-bg-end));
-    --vitre-button-hover-border: color-mix(in oklab, var(--vitre-primary), white 26%);
-    --vitre-button-hover-glow: color-mix(in oklab, var(--vitre-primary), transparent 70%);
+    --vitre-button-hover-border: color-mix(in oklab, var(--vitre-button-color), white 26%);
+    --vitre-button-hover-glow: color-mix(in oklab, var(--vitre-button-color), transparent 70%);
     --vitre-button-hover-glow-shadow: 0 6px 20px var(--vitre-button-hover-glow);
     --vitre-button-hover-drop-shadow: 0 3px 10px hsl(0 0% 0% / 0.16);
     --vitre-button-hover-shadow: var(--vitre-button-hover-glow-shadow), var(--vitre-button-hover-drop-shadow);
     --vitre-busy-border: color-mix(in oklab, var(--vitre-busy-color), transparent 70%);
     --vitre-table-foot-bg: color-mix(in oklab, var(--vitre-surface-soft), var(--vitre-primary) 4%);
     --vitre-table-row-hover: color-mix(in oklab, var(--vitre-primary), transparent 94%);
+    --vitre-indicator-color: var(--vitre-primary);
     --vitre-alert-color: var(--vitre-info);
     --vitre-alert-bg: var(--vitre-info-bg);
     --vitre-alert-border: color-mix(in oklab, var(--vitre-alert-color), var(--vitre-border) 45%);
@@ -529,12 +536,20 @@
     background: var(--vitre-info);
   }
 
+  mark[data-token="info-ink"] {
+    background: var(--vitre-info-ink);
+  }
+
   mark[data-token="info-bg"] {
     background: var(--vitre-info-bg);
   }
 
   mark[data-token="success"] {
     background: var(--vitre-success);
+  }
+
+  mark[data-token="success-ink"] {
+    background: var(--vitre-success-ink);
   }
 
   mark[data-token="success-bg"] {
@@ -545,12 +560,20 @@
     background: var(--vitre-warning);
   }
 
+  mark[data-token="warning-ink"] {
+    background: var(--vitre-warning-ink);
+  }
+
   mark[data-token="warning-bg"] {
     background: var(--vitre-warning-bg);
   }
 
   mark[data-token="error"] {
     background: var(--vitre-error);
+  }
+
+  mark[data-token="error-ink"] {
+    background: var(--vitre-error-ink);
   }
 
   mark[data-token="error-bg"] {
@@ -755,12 +778,37 @@
     transform: translateY(0) scale(1.01);
   }
 
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-color="primary"] {
+    --vitre-button-color: var(--vitre-primary);
+    --vitre-button-ink: var(--vitre-primary-ink);
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-color="info"] {
+    --vitre-button-color: var(--vitre-info);
+    --vitre-button-ink: var(--vitre-info-ink);
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-color="success"] {
+    --vitre-button-color: var(--vitre-success);
+    --vitre-button-ink: var(--vitre-success-ink);
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-color="warning"] {
+    --vitre-button-color: var(--vitre-warning);
+    --vitre-button-ink: var(--vitre-warning-ink);
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-color="error"] {
+    --vitre-button-color: var(--vitre-error);
+    --vitre-button-ink: var(--vitre-error-ink);
+  }
+
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="flat"] {
     background-image: none;
   }
 
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="outline"] {
-    color: var(--vitre-primary);
+    color: var(--vitre-button-color);
     background-color: transparent;
     background-image: none;
   }
@@ -768,7 +816,7 @@
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="ghost"],
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="plain"] {
     border-color: transparent;
-    color: var(--vitre-primary);
+    color: var(--vitre-button-color);
     background-color: transparent;
     background-image: none;
     --vitre-button-hover-glow-shadow: 0 0 0 hsl(0 0% 0% / 0);
@@ -778,6 +826,10 @@
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="plain"] {
     border-width: 0;
     color: currentColor;
+  }
+
+  :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="plain"][data-color] {
+    color: var(--vitre-button-color);
   }
 
   :where(button, input[type="button"], input[type="reset"], input[type="submit"])[data-variant="ghost"]:not(:disabled):hover {
@@ -970,7 +1022,7 @@
   meter {
     inline-size: 100%;
     block-size: 1rem;
-    accent-color: var(--vitre-primary);
+    accent-color: var(--vitre-indicator-color);
   }
 
   progress {
@@ -985,15 +1037,35 @@
   }
 
   progress::-webkit-progress-value {
-    background: var(--vitre-primary);
+    background: var(--vitre-indicator-color);
   }
 
   progress::-moz-progress-bar {
-    background: var(--vitre-primary);
+    background: var(--vitre-indicator-color);
   }
 
   meter {
     border-radius: 999px;
+  }
+
+  :where(progress, meter)[data-color="primary"] {
+    --vitre-indicator-color: var(--vitre-primary);
+  }
+
+  :where(progress, meter)[data-color="info"] {
+    --vitre-indicator-color: var(--vitre-info);
+  }
+
+  :where(progress, meter)[data-color="success"] {
+    --vitre-indicator-color: var(--vitre-success);
+  }
+
+  :where(progress, meter)[data-color="warning"] {
+    --vitre-indicator-color: var(--vitre-warning);
+  }
+
+  :where(progress, meter)[data-color="error"] {
+    --vitre-indicator-color: var(--vitre-error);
   }
 
   img,

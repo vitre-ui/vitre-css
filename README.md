@@ -127,6 +127,21 @@ Other supported variants are `outline`, `ghost`, and `plain`:
 <button type="button" data-variant="plain">Plain button</button>
 ```
 
+Use `data-color` for semantic button intent. Supported values are `primary`, `info`, `success`, `warning`, and `error`; each variant decides whether that color is used as a fill, foreground, border, or hover tint:
+
+```html
+<button type="button" data-color="success">Save</button>
+<button type="button" data-color="error" data-variant="outline">Delete</button>
+<button type="button" data-color="info" data-variant="ghost">Details</button>
+```
+
+The same `data-color` values are also supported on `progress` and `meter`:
+
+```html
+<progress data-color="success" max="100" value="72">72%</progress>
+<meter data-color="warning" min="0" max="100" value="68">68</meter>
+```
+
 Token swatches can use `data-token`:
 
 ```html
@@ -151,7 +166,7 @@ Prefer variables when they exist. If you find yourself repeatedly overriding the
 - Code: `code`, `pre`, `kbd`, and `samp`
 - Forms: labels, buttons, inputs, textareas, selects, fieldsets, checkboxes, radios, ranges, and color inputs
 - Data and disclosure: tables, `details`, `summary`, `dialog`, `progress`, and `meter`
-- Data patterns: `[data-kind="alert"]`, `[data-color="warning"]`, `[role="dialog"]`, and grouped form controls
+- Data patterns: `[data-kind="alert"]`, `[data-color="warning"]`, `[data-variant="outline"]`, `[role="dialog"]`, and grouped form controls
 - Media: images, videos, SVGs, canvas, and iframes
 
 ## Browser Support

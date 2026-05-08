@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.7 - 2026-05-08
+
+- Added variable-driven `data-color` support for buttons, button variants, `progress`, and `meter`.
+- Added color-specific button ink tokens so filled semantic buttons can preserve readable contrast.
+
 ## 1.5.6 - 2026-05-08
 
 - Added `vitre-base.css` as an optional first-paint baseline for Vitre theme, typography, background, and page-width styles.

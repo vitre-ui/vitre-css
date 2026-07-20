@@ -142,6 +142,14 @@ The same `data-color` values are also supported on `progress` and `meter`:
 <meter data-color="warning" min="0" max="100" value="68">68</meter>
 ```
 
+Resizable panes can mark their drag handle as a semantic splitter:
+
+```html
+<div data-kind="splitter" role="separator" aria-orientation="vertical"></div>
+```
+
+Pair with `vitre-js` to ensure splitter handles receive keyboard focus and orientation metadata.
+
 Iframes are responsive by default with a `16 / 9` aspect ratio. Use `data-fit="contain"` on embedded or framed media that should opt into the same stable responsive ratio:
 
 ```html
